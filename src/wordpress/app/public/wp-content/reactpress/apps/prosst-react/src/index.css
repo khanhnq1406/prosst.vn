@@ -1,0 +1,263 @@
+.home {
+  display: block;
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+}
+button {
+  font-family: "Montserrat", sans-serif;
+}
+.hopeui_style-breadcrumb {
+  display: none !important;
+}
+
+.container-fluid {
+  display: none !important;
+}
+
+.hopeui_style-footer {
+  display: none !important;
+}
+/*******************************************
+*                Overview                 *
+*******************************************/
+.container {
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.content-wrapper {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.content {
+  flex: 1 0 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+.content img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.content-1 {
+  opacity: 50%;
+}
+.black-img {
+  opacity: 75%;
+}
+.black-layout {
+  background-color: black;
+  width: 100%;
+  height: 100%;
+}
+.slider-wrapper {
+  position: absolute;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+}
+
+.pagination-wrapper {
+  bottom: 0;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.pagination {
+  border-radius: 100%;
+  border-width: 0;
+  margin-top: 0px;
+  margin-right: 4px;
+  margin-bottom: 0px;
+  margin-left: 4px;
+  width: 12px;
+  height: 12px;
+  background-color: black;
+  transform: scale(0.6);
+  opacity: 0.8;
+}
+
+.pagination.active {
+  background-color: #007aff;
+}
+
+.button-slide-left {
+  top: 50%;
+  position: absolute;
+  transform: translateY(-50%);
+}
+
+.button-slide-right {
+  top: 50%;
+  position: absolute;
+  transform: translateY(-50%);
+  right: 0;
+}
+.arrow-left img {
+  width: 30px;
+  rotate: -90deg;
+}
+.button-slide-left button {
+  padding: 0;
+  background-color: #000000;
+  border: 0;
+  opacity: 70%;
+}
+.arrow-right img {
+  width: 30px;
+  rotate: 90deg;
+}
+.button-slide-right button {
+  padding: 0;
+  background-color: #000000;
+  border: 0;
+  opacity: 70%;
+}
+.navbar {
+  position: absolute;
+  top: 0;
+  height: fit-content;
+  width: 100%;
+  z-index: 1;
+  display: flex;
+  white-space: nowrap;
+  margin-top: 10px;
+  align-items: center;
+}
+.navbar .logo {
+  width: fit-content;
+  height: fit-content;
+  margin-left: 10px;
+}
+
+.logo img {
+  width: 70px;
+}
+
+.navigate-wrapper,
+.navigate-wrapper a {
+  width: fit-content;
+  height: fit-content;
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
+.navigate-wrapper {
+  position: absolute;
+  right: 0;
+  display: flex;
+  white-space: nowrap;
+}
+
+.navigate-wrapper a {
+  color: rgba(255, 255, 255, 0.62);
+  text-decoration: none;
+}
+
+.navigate-link.active a {
+  color: #ffffff;
+  text-decoration: none;
+}
+.navigate-link:hover {
+  transition: all 0.3s ease;
+  transform: scale(1.2);
+}
+.navigate-link a:hover {
+  color: #ffffff;
+}
+
+.box-wrapper-landing {
+  position: absolute;
+  display: inline-block;
+  color: #ffffff;
+}
+
+.box-wrapper-landing .overview-title {
+  font-weight: 600;
+  font-size: 15px;
+  text-align: center;
+}
+.box-wrapper-landing .overview-content {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-weight: 700;
+  font-size: 50px;
+}
+.box-wrapper-landing .overview-button {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 15px;
+  position: relative;
+  z-index: 2;
+}
+
+.box-wrapper-landing .overview-button button {
+  border: 0;
+  border-radius: 20px;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color: #fff;
+}
+
+.box-wrapper-landing .overview-button button:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.box-wrapper {
+  background-color: rgba(0, 0, 0, 0.75);
+  position: fixed;
+  color: #ffffff;
+  left: 110%;
+  width: 60%;
+  padding: 25px;
+}
+
+.box-wrapper .overview-title {
+  text-align: left;
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+.box-wrapper .overview-content {
+  text-align: left;
+  font-size: 17px;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+
+.box-wrapper .overview-button {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.box-wrapper .overview-button button {
+  padding: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-weight: 600;
+  font-size: 12px;
+  border: none;
+}
+
+.box-wrapper .overview-button button:hover {
+  color: #ffffff;
+  background-color: #000000;
+}
