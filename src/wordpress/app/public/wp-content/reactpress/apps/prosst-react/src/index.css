@@ -6,6 +6,10 @@
 button {
   font-family: "Montserrat", sans-serif;
 }
+
+/*******************************************
+*       Remove WordPress Template          *
+*******************************************/
 .hopeui_style-breadcrumb {
   display: none !important;
 }
@@ -15,6 +19,12 @@ button {
 }
 
 .hopeui_style-footer {
+  display: none !important;
+}
+#header {
+  display: none !important;
+}
+#footer {
   display: none !important;
 }
 /*******************************************
