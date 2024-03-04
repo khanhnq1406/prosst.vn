@@ -1,3 +1,4 @@
+import Branding from "../components/branding";
 import Introduction from "../components/introduction";
 import Overview from "../components/overview";
 import Product from "../components/product";
@@ -14,6 +15,9 @@ export default function Root() {
         </section>
         <section className="product">
           <Product />
+        </section>
+        <section className="branding">
+          <Branding />
         </section>
       </div>
     </>
