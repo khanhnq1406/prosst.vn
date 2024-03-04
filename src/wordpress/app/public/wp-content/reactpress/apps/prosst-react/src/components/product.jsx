@@ -13,7 +13,6 @@ const Product = () => {
   useEffect(() => {
     if (isAutoSlidingProduct) {
       const interval = setInterval(() => {
-        console.log("interval:", currentSlideProduct);
         setCurrentSlideProduct((prevSlide) =>
           prevSlide === numberOfProduct ? 0 : prevSlide + 1
         );
@@ -26,7 +25,6 @@ const Product = () => {
   useEffect(() => {
     if (isAutoSlidingProject) {
       const interval = setInterval(() => {
-        console.log("interval:", currentSlideProject);
         setCurrentSlideProject((prevSlide) =>
           prevSlide === numberOfProject ? 0 : prevSlide + 1
         );

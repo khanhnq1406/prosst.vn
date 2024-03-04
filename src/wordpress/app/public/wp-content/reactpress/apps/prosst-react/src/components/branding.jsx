@@ -5,7 +5,6 @@ const Branding = () => {
   //   const currentPartnerPosition = 200;
   const [currentPartnerPosition, setCurrentPartnerPosition] = useState(0);
   useEffect(() => {
-    console.log(currentPartnerPosition);
     const interval = setInterval(() => {
       setCurrentPartnerPosition((prevPostion) =>
         prevPostion === 1000 ? 0 : prevPostion + 10
