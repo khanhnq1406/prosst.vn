@@ -51,10 +51,10 @@ const Overview = () => {
           </div>
           <div className="navigate-wrapper">
             <div className="navigate-link active">
-              <a href="#">Trang chủ</a>
+              <a href="/">Trang chủ</a>
             </div>
             <div className="navigate-link">
-              <a href="#">Giới thiệu</a>
+              <a href="/gioi-thieu">Giới thiệu</a>
             </div>
             <div className="navigate-link">
               <a href="#">Sản phẩm</a>
@@ -97,10 +97,10 @@ const Overview = () => {
               <div className="overview-title">WAREHOUSE, LOGISTIC</div>
               <div className="overview-content">
                 AGV robot tự hành trong kho, khung kệ, bảng tên, phần mềm quản
-                lý kho
+                lý kho...
               </div>
               <div className="overview-button">
-                <button>XEM THÊM...</button>
+                <button>XEM THÊM →</button>
               </div>
             </div>
           </div>
@@ -111,10 +111,10 @@ const Overview = () => {
             <div className="box-wrapper" style={{ left: "210%" }}>
               <div className="overview-title">ROBOT</div>
               <div className="overview-content">
-                Robot KUKA, Robot ABB và các phụ tùng liên quan
+                Robot KUKA, Robot ABB và các phụ tùng liên quan...
               </div>
               <div className="overview-button">
-                <button>XEM THÊM...</button>
+                <button>XEM THÊM →</button>
               </div>
             </div>
           </div>
@@ -126,10 +126,10 @@ const Overview = () => {
               <div className="overview-title">COMPUTER VISION</div>
               <div className="overview-content">
                 Máy tính công nghiệp, camera công nghiệp, thấu kính, đèn công
-                nghiệp, đồ gá, phần mềm chuyên dụng cho vision
+                nghiệp, đồ gá, phần mềm chuyên dụng cho vision...
               </div>
               <div className="overview-button">
-                <button>XEM THÊM...</button>
+                <button>XEM THÊM →</button>
               </div>
             </div>
           </div>
