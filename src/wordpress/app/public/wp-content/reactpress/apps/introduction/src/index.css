@@ -31,15 +31,20 @@ button {
 /*******************************************
 *                 Overview                 *
 *******************************************/
-.overview-wrapper {
+.overview {
+  position: relative;
+  height: fit-content;
+  width: 100%;
+}
+/* .overview-wrapper {
   position: absolute;
   width: 100%;
   height: fit-content;
-}
+} */
 
 .bg-image img {
-  position: relative;
-  z-index: -1;
+  /* position: relative; */
+  z-index: 0;
   /* Add the blur effect */
 
   position: absolute;
@@ -59,7 +64,7 @@ button {
   z-index: 1;
   display: flex;
   white-space: nowrap;
-  margin-top: 10px;
+  padding: 10px;
   align-items: center;
 }
 
@@ -67,6 +72,7 @@ button {
   width: fit-content;
   height: fit-content;
   margin-left: 10px;
+  z-index: 0;
 }
 
 .logo img {
@@ -113,9 +119,13 @@ button {
   font-size: 45px;
   font-weight: 700;
   margin: 90px 0px 20px 0px;
+  position: relative;
+  z-index: 0;
 }
 
 .overview-content {
+  position: relative;
+  z-index: 0;
   color: #ffffff;
   display: flex;
   justify-content: center;
@@ -146,10 +156,127 @@ button {
   justify-content: center;
   overflow: hidden;
   width: 100% !important;
-  margin: 30px 0px 30px 0px;
+  margin: 30px 0px 0px 0px;
+  padding-bottom: 30px;
+  position: relative;
+  z-index: 0;
 }
 
 .overview-img img {
   width: calc(100% / 5 - 20px);
   margin: 0 20px;
+}
+
+/*******************************************
+*                 Industry                 *
+*******************************************/
+
+.industry {
+  position: relative;
+  height: fit-content;
+  width: 100%;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+.grid-content {
+  align-items: center;
+  display: flex;
+}
+.industry-content {
+  width: 370px;
+  margin: 80px 0px 0px 20%;
+}
+
+.industry-title {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.break-line {
+  height: 2px;
+  width: 75%;
+  border-width: 0;
+  color: black;
+  background-color: black;
+  margin-left: 0;
+}
+.industry-paragraph {
+  font-weight: 300;
+  line-height: 135%;
+  margin-bottom: 80px;
+  font-size: 20px;
+}
+.card-wrapper {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 50% 50%;
+  justify-self: center;
+  width: fit-content;
+  margin-top: 80px;
+}
+.card-title {
+  text-align: center;
+  font-weight: 600;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.card {
+  background-color: #ffffff;
+  /* border-width: 1px;
+  border-style: solid;
+  border-color: black; */
+  border-radius: 10px;
+  text-align: center;
+  margin: 15px;
+  max-width: 300px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.card-image img {
+  border-radius: 10px;
+  width: 80%;
+  height: 80%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+.card-button img {
+  width: 30px;
+  margin-bottom: 10px;
+}
+
+/* === Animation === */
+
+.industry-content {
+  animation: fadeInUp 1s ease-in-out;
+  animation-fill-mode: forwards; /* Keep final state after animation */
+  opacity: 0; /* Initial hidden state */
+  transform: translateY(40px); /* Initial transform for animation */
+  animation-play-state: paused; /* Prevent initial animation */
+}
+.industry-content.is-animated {
+  animation-play-state: running; /* Start the animation */
+}
+.grid-image {
+  animation: fadeInUp 1s ease-in-out;
+  animation-fill-mode: forwards; /* Keep final state after animation */
+  opacity: 0; /* Initial hidden state */
+  transform: translateY(40px); /* Initial transform for animation */
+  animation-play-state: paused; /* Prevent initial animation */
+}
+.grid-image.is-animated {
+  animation-play-state: running; /* Start the animation */
 }

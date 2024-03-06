@@ -3,7 +3,10 @@ if (process.env.NODE_ENV === "development") path = "/";
 
 const Overview = () => {
   return (
-    <div className="overview-wrapper">
+    <div
+      className="overview-wrapper"
+      style={{ backgroundImage: `${path}black-bg.png` }}
+    >
       <div className="bg-image">
         <img src={`${path}black-bg.png`} alt="" />
       </div>
