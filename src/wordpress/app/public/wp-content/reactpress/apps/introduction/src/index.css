@@ -452,3 +452,51 @@ button {
 .achivement-product .number.is-animated {
   --num: 250;
 }
+
+/*******************************************
+*                 Customer                 *
+*******************************************/
+.customer-title {
+  font-size: 30px;
+  text-align: center;
+  font-weight: 700;
+}
+.customer-logo img {
+  max-height: 300px;
+  max-width: 200px;
+  margin: 50px;
+}
+.customer-logo .line-break {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.contact-title {
+  text-align: center;
+  line-height: 30px;
+  font-size: 18px;
+  font-weight: 700;
+  margin: 30px;
+}
+
+.contact-button button {
+  border: 0;
+  border-radius: 20px;
+  font-weight: 500;
+  padding: 10px 20px;
+  background-color: #111111;
+  color: #ffffff;
+}
+
+.contact-button button:hover {
+  background-color: #363537;
+}
