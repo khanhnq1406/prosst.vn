@@ -1,5 +1,6 @@
 import Industry from "../components/industry";
 import Overview from "../components/overview";
+import Strategy from "../components/strategy";
 export default function Root() {
   return (
     <>
@@ -9,6 +10,9 @@ export default function Root() {
         </section>
         <section className="industry">
           <Industry />
+        </section>
+        <section className="strategy">
+          <Strategy />
         </section>
       </div>
     </>

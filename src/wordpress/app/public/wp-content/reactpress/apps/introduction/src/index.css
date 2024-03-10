@@ -280,3 +280,87 @@ button {
 .grid-image.is-animated {
   animation-play-state: running; /* Start the animation */
 }
+
+/*******************************************
+*                 Strategy                 *
+*******************************************/
+.strategy {
+  position: relative;
+  height: fit-content;
+  width: 100%;
+  /* white-space: nowrap; */
+}
+
+.strategy-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.strategy-card {
+  background-color: #ffffff;
+  width: 250px;
+  height: 395;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 10px;
+  margin: 0px 60px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  align-content: flex-start;
+  margin-bottom: 30px;
+}
+
+.strategy-icon img {
+  width: 180px;
+  max-height: 180px;
+}
+.strategy-icon {
+  text-align: center;
+  margin: 10px 35px 10px 35px;
+  width: 180px;
+  max-height: 180px;
+}
+.strategy-title {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 600;
+  width: fit-content;
+  margin-bottom: 12px;
+  height: fit-content;
+}
+
+.strategy-content {
+  text-align: justify;
+  width: 180px;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.strategy-content ul {
+  margin: 0;
+  padding-left: 20px;
+  text-align: left;
+  line-height: 23px;
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.strategy-card {
+  animation: fadeInRight 1.5s ease-in-out;
+  animation-fill-mode: forwards; /* Keep final state after animation */
+  opacity: 0; /* Initial hidden state */
+  transform: translateX(-40px); /* Initial transform for animation */
+  animation-play-state: paused; /* Prevent initial animation */
+}
+.strategy-card.is-animated {
+  animation-play-state: running; /* Start the animation */
+}
