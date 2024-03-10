@@ -364,3 +364,91 @@ button {
 .strategy-card.is-animated {
   animation-play-state: running; /* Start the animation */
 }
+
+/*******************************************
+*               Achievement                *
+*******************************************/
+
+.achievement-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 200px 0px;
+}
+.achievement-title {
+  max-width: 456px;
+}
+.achievement-title .title-1 {
+  font-weight: 700;
+}
+
+.achievement-title .title-2 {
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.achivement-customer .number,
+.achivement-project .number,
+.achivement-product .number {
+  font-size: 60px;
+  font-weight: 700;
+  color: #62615c;
+  text-align: center;
+}
+
+.achivement-customer,
+.achivement-project,
+.achivement-product {
+  margin: 0px 25px;
+}
+
+.achievements-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@property --num {
+  syntax: "<integer>";
+  initial-value: 0;
+  inherits: false;
+}
+
+.achivement-customer .number {
+  transition: --num 3s;
+  counter-reset: num var(--num);
+  animation-fill-mode: forwards; /* Keep final state after animation */
+}
+
+.achivement-customer .number::after {
+  content: counter(num);
+}
+.achivement-customer .number.is-animated {
+  --num: 50;
+}
+
+.achivement-project .number {
+  transition: --num 3s;
+  counter-reset: num var(--num);
+  animation-fill-mode: forwards; /* Keep final state after animation */
+}
+
+.achivement-project .number::after {
+  content: counter(num);
+}
+.achivement-project .number.is-animated {
+  --num: 100;
+}
+
+.achivement-product .number {
+  transition: --num 3s;
+  counter-reset: num var(--num);
+  animation-fill-mode: forwards; /* Keep final state after animation */
+}
+
+.achivement-product .number::after {
+  content: counter(num);
+}
+.achivement-product .number.is-animated {
+  --num: 250;
+}

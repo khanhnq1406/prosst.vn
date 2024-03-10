@@ -8,6 +8,7 @@ const Industry = () => {
   useEffect(() => {
     window.addEventListener("scroll", () => {
       var rect = contentRef.current.getBoundingClientRect();
+      console.log(rect.top, rect.right, rect.bottom, rect.left);
       if (rect.top < 500) {
         contentRef.current.classList.add("is-animated");
         contentRef.current.addEventListener("animationend", function () {

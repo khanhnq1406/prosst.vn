@@ -1,3 +1,4 @@
+import Achievement from "../components/achievement";
 import Industry from "../components/industry";
 import Overview from "../components/overview";
 import Strategy from "../components/strategy";
@@ -13,6 +14,9 @@ export default function Root() {
         </section>
         <section className="strategy">
           <Strategy />
+        </section>
+        <section className="achievement">
+          <Achievement />
         </section>
       </div>
     </>
