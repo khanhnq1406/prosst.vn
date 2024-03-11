@@ -17,7 +17,7 @@ const Customer = () => {
         </div>
       </div>
       <div className="contact">
-        <div className="contact-title">
+        <div className="customer-contact-title">
           Quý khách đang cần giải pháp kho ? HÃY LIÊN HỆ PROSST
           <br />
           Hotline: 0938 489 568

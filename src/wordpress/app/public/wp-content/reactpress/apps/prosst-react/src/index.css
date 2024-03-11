@@ -42,6 +42,7 @@ button {
 .content-wrapper {
   display: flex;
   transition: transform 0.9s ease;
+  max-height: 430px;
 }
 
 .content {
@@ -166,7 +167,9 @@ button {
   position: absolute;
   right: 0;
   display: flex;
-  white-space: nowrap;
+  flex-wrap: wrap;
+  justify-content: right;
+  /* white-space: nowrap; */
 }
 
 .navigate-wrapper a {
@@ -194,7 +197,7 @@ button {
 
 .box-wrapper-landing .overview-title {
   font-weight: 600;
-  font-size: 15px;
+  font-size: 1.4vw;
   text-align: center;
 }
 .box-wrapper-landing .overview-content {
@@ -202,7 +205,7 @@ button {
   align-items: center;
   text-align: center;
   font-weight: 700;
-  font-size: 50px;
+  font-size: 2.8vw;
 }
 .box-wrapper-landing .overview-button {
   justify-content: center;
@@ -215,8 +218,8 @@ button {
 
 .box-wrapper-landing .overview-button button {
   border: 0;
-  border-radius: 20px;
-  font-size: 15px;
+  border-radius: 25px;
+  font-size: 1.2vw;
   font-weight: 500;
   padding: 10px;
   padding-left: 15px;
@@ -240,7 +243,7 @@ button {
 
 .box-wrapper .overview-title {
   text-align: left;
-  font-size: 30px;
+  font-size: 2.3vw;
   font-weight: 600;
   margin-bottom: 20px;
   margin-top: 10px;
@@ -248,9 +251,9 @@ button {
 
 .box-wrapper .overview-content {
   text-align: left;
-  font-size: 17px;
+  font-size: 1.3vw;
   font-weight: 300;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
 .box-wrapper .overview-button {
@@ -264,7 +267,7 @@ button {
   padding-left: 15px;
   padding-right: 15px;
   font-weight: 600;
-  font-size: 12px;
+  font-size: 1vw;
   border: none;
 }
 
@@ -774,4 +777,86 @@ input:-webkit-autofill:focus {
   font-size: 12px;
   opacity: 70%;
   width: fit-content;
+}
+
+/*******************************************
+*                Outstanding               *
+*******************************************/
+.outstanding-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 20px 0px;
+}
+
+.outstanding-title {
+  font-weight: 700;
+  font-size: 40px;
+  width: 100%;
+  text-align: center;
+  padding-bottom: 10px;
+}
+.outstanding-content {
+  font-size: 18px;
+  max-width: 70%;
+  text-align: center;
+  padding-bottom: 15px;
+}
+
+.outstanding-card-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.outstanding-card {
+  background-color: #ffffff;
+  width: 250px;
+  height: 395;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 10px;
+  margin: 0px 60px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  align-content: flex-start;
+  margin-bottom: 30px;
+}
+
+.outstanding-card-icon img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+.outstanding-card-icon {
+  text-align: center;
+  margin: 30px 35px 10px 35px;
+  width: 180px;
+  max-height: 180px;
+}
+.outstanding-card-title {
+  text-align: center;
+  font-size: 25px;
+  font-weight: 600;
+  width: fit-content;
+  margin-bottom: 12px;
+  height: fit-content;
+}
+.outstanding-button button {
+  border: 0;
+  border-radius: 25px;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-bottom: 25px;
+  background-color: #000000;
+  color: #f3f4f0;
+}
+
+.outstanding-button button:hover {
+  background-color: #f3f4f0;
+  color: #000000;
 }

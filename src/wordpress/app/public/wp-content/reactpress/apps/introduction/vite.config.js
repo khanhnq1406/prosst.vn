@@ -1,16 +1,16 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ command }) => {
-  if (command === 'build') {
+  if (command === "build") {
     return {
       base: "/wp-content/reactpress/apps/introduction/dist/",
       plugins: [react()],
-    }
+    };
   } else {
     return {
       plugins: [react()],
-    }
+    };
   }
-})
+});
