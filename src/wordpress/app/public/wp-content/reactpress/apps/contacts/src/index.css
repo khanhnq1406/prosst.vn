@@ -1,0 +1,201 @@
+html,
+body {
+  height: 100%;
+  background-color: #f3f4f0;
+}
+.container {
+  display: block;
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  background-color: #f3f4f0;
+}
+button {
+  font-family: "Montserrat", sans-serif;
+}
+/*******************************************
+*       Remove WordPress Template          *
+*******************************************/
+.hopeui_style-breadcrumb {
+  display: none !important;
+}
+
+.container-fluid {
+  display: none !important;
+}
+
+.hopeui_style-footer {
+  display: none !important;
+}
+#header {
+  display: none !important;
+}
+#footer {
+  display: none !important;
+}
+
+/*******************************************
+*                   Navbar                 *
+*******************************************/
+
+.navbar {
+  /* position: absolute; */
+  top: 0;
+  height: fit-content;
+  width: 100%;
+  z-index: 1;
+  display: flex;
+  white-space: nowrap;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  align-items: center;
+}
+.navbar .logo {
+  width: fit-content;
+  height: fit-content;
+  margin-left: 20px;
+}
+
+.logo img {
+  width: 90px;
+}
+
+.navigate-wrapper,
+.navigate-wrapper a {
+  width: fit-content;
+  height: fit-content;
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
+.navigate-wrapper {
+  position: absolute;
+  right: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: right;
+}
+
+.navigate-wrapper a {
+  color: rgba(0, 0, 0, 0.6);
+  text-decoration: none;
+  font-weight: 400;
+}
+
+.navigate-link.active a {
+  color: #000000;
+  text-decoration: none;
+  font-weight: 500;
+}
+.navigate-link:hover {
+  transition: all 0.3s ease;
+  transform: scale(1.2);
+}
+.navigate-link a:hover {
+  color: #000000;
+}
+
+/*******************************************
+*                   Title                  *
+*******************************************/
+
+.title {
+  text-align: center;
+  font-size: 40px;
+  font-weight: 600;
+}
+
+/*******************************************
+*                 Content                  *
+*******************************************/
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+/*******************************************
+*                   Info                   *
+*******************************************/
+.contact-info {
+  max-width: 500px;
+  font-size: 16px;
+}
+.contact-title {
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+.contact-sub {
+  margin-bottom: 15px;
+}
+.company-name {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+.company-address {
+  margin-bottom: 5px;
+}
+.contact-email {
+  margin-bottom: 5px;
+}
+.contact-hotline {
+  margin-bottom: 5px;
+}
+
+/*******************************************
+*                   Form                   *
+*******************************************/
+.contact-form {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 700px;
+  margin-left: 40px;
+  padding-left: 80px;
+  margin-top: 20px;
+}
+
+.contact-form input {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 100%;
+  max-width: 500px;
+  height: 35px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border-style: solid;
+  border-color: #ddd;
+  border-width: 2px;
+}
+
+.input-label {
+  display: flex;
+  width: 100%;
+  font-weight: 700;
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 5px;
+}
+.required-label {
+  color: #ff0000;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.contact-form .submit-btn {
+  width: 200px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  border: none;
+  border-radius: 20px;
+  background-color: #111111;
+  color: #ffffff;
+}
+
+.contact-form .submit-btn:hover {
+  background-color: #666666;
+}
