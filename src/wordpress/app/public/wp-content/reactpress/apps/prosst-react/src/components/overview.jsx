@@ -57,7 +57,7 @@ const Overview = () => {
               <a href="/gioi-thieu">Giới thiệu</a>
             </div>
             <div className="navigate-link">
-              <a href="#">Sản phẩm</a>
+              <a href="/products">Sản phẩm</a>
             </div>
             <div className="navigate-link">
               <a href="#">Liên hệ</a>

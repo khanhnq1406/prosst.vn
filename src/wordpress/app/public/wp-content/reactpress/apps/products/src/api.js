@@ -25,14 +25,15 @@ export async function getCategoryId(slug) {
       return;
     }
     const responseJson = await response.json();
-    let id = "";
+    let categories = { id: "", name: "" };
     for (let category of responseJson) {
       if (slug === category.slug) {
-        id = category.id;
+        categories.id = category.id;
+        categories.name = category.name;
         break;
       }
     }
-    return id;
+    return categories;
   } catch (error) {
     console.error(error);
     return [];
