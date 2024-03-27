@@ -23,6 +23,9 @@ export default function Root() {
           <div className="navigate-link">
             <a href="/san-pham">Sản phẩm</a>
           </div>
+          <div className="navigate-link">
+            <a href="/du-an">Dự án</a>
+          </div>
           <div className="navigate-link active">
             <a href="/lien-he">Liên hệ</a>
           </div>

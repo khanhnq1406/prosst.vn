@@ -60,6 +60,9 @@ const Overview = () => {
               <a href="/products">Sản phẩm</a>
             </div>
             <div className="navigate-link">
+              <a href="/du-an">Dự án</a>
+            </div>
+            <div className="navigate-link">
               <a href="#">Liên hệ</a>
             </div>
           </div>
