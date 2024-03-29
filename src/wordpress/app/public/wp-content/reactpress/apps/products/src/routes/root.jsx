@@ -1,4 +1,4 @@
-import { getCategoryId, postsApi } from "../api";
+import { getCategoryId, postsApi, categoryApi } from "../api";
 import { useEffect, useState } from "react";
 
 let path = "/wp-content/reactpress/apps/products/public/";
@@ -7,18 +7,19 @@ if (process.env.NODE_ENV === "development") path = "/";
 export default function Root() {
   const [postsInfo, setPostsInfo] = useState([]);
   const [currentCategory, setCurrentCategory] = useState("");
+  const [categoryList, setCategoryList] = useState([]);
   const [hasLoaded, setLoaded] = useState(false);
   useEffect(() => {
-    getPosts("banh-rang");
-    setCurrentCategory("Bánh răng");
+    (async () => {
+      await getCategoryList();
+    })();
   }, []);
 
-  const getPosts = async (slug) => {
+  const getPosts = async (category) => {
     try {
       setLoaded(false);
       setPostsInfo([]);
       const posts = await postsApi();
-      const category = await getCategoryId(slug);
       const categoryId = category.id;
       setCurrentCategory(category.name);
 
@@ -27,12 +28,10 @@ export default function Root() {
         const imgUrl = post._links["wp:attachment"][0].href;
         const imgResponse = await fetch(imgUrl);
         let imgPath = await imgResponse.json();
-        console.log(post, imgPath);
         imgPath = imgPath[0].source_url;
         setPostsInfo((prevPost) => {
           const found = prevPost.find((element) => element.id === post.id);
           if (found !== undefined) return [...prevPost];
-          console.log(post);
           return [
             ...prevPost,
             { id: post.id, title: post.title.rendered, path: imgPath },
@@ -50,12 +49,26 @@ export default function Root() {
       <div className="product-card">
         <img src={post.path} />
         <p>{post.title}</p>
-        <a href="#">
+        <a href="/lien-he">
           <button>Liên hệ</button>
         </a>
       </div>
     </li>
   ));
+  const categoryItems = categoryList.map((category) => (
+    <li key={category.id}>
+      <button className="navigate-link" onClick={(e) => getPosts(category)}>
+        {category.name}
+      </button>
+      <br />
+    </li>
+  ));
+  const getCategoryList = async () => {
+    const response = await categoryApi();
+    setCategoryList(response);
+    getPosts(response[0]);
+    setCurrentCategory(response[0].name);
+  };
   return (
     <div className="container">
       <div className="navbar">
@@ -84,7 +97,8 @@ export default function Root() {
       <div className="product-wrapper">
         <div className="categories">
           <p> Danh mục sản phẩm</p>
-          <button
+          {categoryItems}
+          {/* <button
             className="navigate-link"
             onClick={(e) => getPosts("banh-rang")}
           >
@@ -96,7 +110,7 @@ export default function Root() {
             onClick={(e) => getPosts("xich-tai")}
           >
             Xích tải
-          </button>
+          </button> */}
         </div>
         <div className="product-list">
           <p>{currentCategory}</p>
