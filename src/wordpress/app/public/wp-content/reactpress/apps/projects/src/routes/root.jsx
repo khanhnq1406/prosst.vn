@@ -32,8 +32,43 @@ export default function Root() {
         </div>
         <div className="page-title">DỰ ÁN</div>
       </div>
-
       <div className="project-list">
+        <div className="content">
+          <iframe
+            width="555"
+            height="293"
+            src="https://www.youtube.com/embed/nTnJvAk3QPY?si=Xfw4WECao1xPu_or"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+          <div className="content-title">Dự án PROSST Shuttle in racking</div>
+          <div className="content-description">
+            Lắp đặt dự án PROSST Shuttle in racking
+          </div>
+        </div>
+
+        <div className="content">
+          <iframe
+            width="555"
+            height="293"
+            src="https://www.youtube.com/embed/2FqrclN1fl4?si=WfEoTLYX5LY_BdxR"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+          <div className="content-title">
+            Dự án guiding robot sử dụng Vision system
+          </div>
+          <div className="content-description">
+            Guiding robot for pick and place application using Vision system
+          </div>
+        </div>
+
         <div className="content">
           <img src={`${path}vinamilk.jpg`} />
           <div className="content-title">

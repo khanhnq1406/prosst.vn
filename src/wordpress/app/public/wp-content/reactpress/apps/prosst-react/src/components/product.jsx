@@ -173,15 +173,34 @@ const Product = () => {
             style={{ left: `${currentSlideProject * -257}px` }}
           >
             <div className="img-wrapper">
-              <img class="item" src={`${path}example-product.png`} />
+              <iframe
+                class="item"
+                src="https://www.youtube.com/embed/nTnJvAk3QPY?si=Xfw4WECao1xPu_or"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
               <div className="info">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                <p>PROSST Shuttle in racking</p>
               </div>
             </div>
             <div className="img-wrapper">
-              <img class="item" src={`${path}example-product.png`} />
+              <iframe
+                class="item"
+                src="https://www.youtube.com/embed/2FqrclN1fl4?si=WfEoTLYX5LY_BdxR"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
               <div className="info">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                <p>
+                  Guiding robot for pick and place application using Vision
+                  system
+                </p>
               </div>
             </div>
             <div className="img-wrapper">
