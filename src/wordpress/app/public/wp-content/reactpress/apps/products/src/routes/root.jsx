@@ -1,6 +1,6 @@
 import { getCategoryId, postsApi, categoryApi } from "../api";
 import { useEffect, useState } from "react";
-
+import Footer from "../../../prosst-react/src/components/footer";
 let path = "/wp-content/reactpress/apps/products/public/";
 if (process.env.NODE_ENV === "development") path = "/";
 
@@ -98,19 +98,6 @@ export default function Root() {
         <div className="categories">
           <p> Danh mục sản phẩm</p>
           {categoryItems}
-          {/* <button
-            className="navigate-link"
-            onClick={(e) => getPosts("banh-rang")}
-          >
-            Bánh răng
-          </button>
-          <br />
-          <button
-            className="navigate-link"
-            onClick={(e) => getPosts("xich-tai")}
-          >
-            Xích tải
-          </button> */}
         </div>
         <div className="product-list">
           <p>{currentCategory}</p>
@@ -120,6 +107,9 @@ export default function Root() {
             <img src={`${path}loading.gif`} style={{ width: "200px" }}></img>
           )}
         </div>
+      </div>
+      <div className="footer-custom">
+        <Footer />
       </div>
     </div>
   );
