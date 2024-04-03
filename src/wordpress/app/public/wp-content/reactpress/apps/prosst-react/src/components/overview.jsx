@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-let path = "/wp-content/reactpress/apps/prosst-react/public/";
+let path = "/wp-content/reactpress/apps/prosst-react/dist/";
 if (process.env.NODE_ENV === "development") path = "/";
 
 const Overview = () => {

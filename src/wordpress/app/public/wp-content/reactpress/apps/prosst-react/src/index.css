@@ -28,6 +28,17 @@ button {
 #footer {
   display: none !important;
 }
+header {
+  display: none !important;
+}
+footer {
+  display: none !important;
+}
+.ast-container {
+  padding: 0;
+  margin: 0;
+  max-width: none;
+}
 /*******************************************
 *                Overview                 *
 *******************************************/
@@ -78,23 +89,20 @@ button {
 }
 
 .pagination-wrapper {
-  bottom: 0;
+  bottom: -30px;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
 }
 
 .pagination {
-  border-radius: 100%;
+  border-radius: 100% !important;
   border-width: 0;
-  margin-top: 0px;
-  margin-right: 4px;
-  margin-bottom: 0px;
-  margin-left: 4px;
-  width: 12px;
-  height: 12px;
+  margin: 0px -30px;
+  width: 100px !important;
+  height: 100px !important;
   background-color: black;
-  transform: scale(0.6);
+  transform: scale(0.1) !important;
   opacity: 0.8;
 }
 
@@ -197,7 +205,7 @@ button {
 
 .box-wrapper-landing .overview-title {
   font-weight: 600;
-  font-size: 1.4vw;
+  font-size: 17px;
   text-align: center;
 }
 .box-wrapper-landing .overview-content {
@@ -205,7 +213,12 @@ button {
   align-items: center;
   text-align: center;
   font-weight: 700;
-  font-size: 2.8vw;
+  font-size: 50px;
+  margin-bottom: 20px;
+  line-height: 70px;
+}
+.box-wrapper-landing .overview-content p {
+  margin-bottom: 0px !important;
 }
 .box-wrapper-landing .overview-button {
   justify-content: center;
@@ -219,17 +232,18 @@ button {
 .box-wrapper-landing .overview-button button {
   border: 0;
   border-radius: 25px;
-  font-size: 1.2vw;
+  font-size: 16px;
   font-weight: 500;
   padding: 10px;
   padding-left: 15px;
   padding-right: 15px;
-  background-color: #fff;
+  background-color: #fff !important;
+  color: #000 !important;
 }
 
 .box-wrapper-landing .overview-button button:hover {
-  background-color: #000000;
-  color: #ffffff;
+  background-color: #000000 !important;
+  color: #ffffff !important;
 }
 
 .box-wrapper {
@@ -243,15 +257,15 @@ button {
 
 .box-wrapper .overview-title {
   text-align: left;
-  font-size: 2.3vw;
+  font-size: 30px;
   font-weight: 600;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
   margin-top: 10px;
 }
 
 .box-wrapper .overview-content {
   text-align: left;
-  font-size: 1.3vw;
+  font-size: 19px;
   font-weight: 300;
   margin-bottom: 25px;
 }
@@ -267,13 +281,13 @@ button {
   padding-left: 15px;
   padding-right: 15px;
   font-weight: 600;
-  font-size: 1vw;
+  font-size: 15px;
   border: none;
 }
 
 .box-wrapper .overview-button button:hover {
-  color: #ffffff;
-  background-color: #000000;
+  color: #ffffff !important;
+  background-color: #000000 !important;
 }
 
 /*******************************************
@@ -364,6 +378,7 @@ button {
 }
 .img-wrapper {
   height: fit-content;
+  margin: 0px 10px;
 }
 .img-wrapper .item {
   height: 100%;
@@ -415,7 +430,7 @@ button {
 }
 .ctrl-btn.pro-prev {
   left: 0;
-  margin-left: 45px;
+  margin-left: 25px;
 }
 .ctrl-btn.pro-prev img {
   width: 30px;
@@ -424,7 +439,7 @@ button {
 
 .ctrl-btn.pro-next {
   right: 0;
-  margin-right: 45px;
+  margin-right: 25px;
 }
 .ctrl-btn.pro-next img {
   width: 30px;
@@ -444,7 +459,7 @@ button {
 
 .ctrl-btn-second.pro-prev-second {
   left: 0;
-  margin-left: 45px;
+  margin-left: 25px;
 }
 .ctrl-btn-second.pro-prev-second img {
   width: 30px;
@@ -453,7 +468,7 @@ button {
 
 .ctrl-btn-second.pro-next-second {
   right: 0;
-  margin-right: 45px;
+  margin-right: 25px;
 }
 .ctrl-btn-second.pro-next-second img {
   width: 30px;
@@ -474,7 +489,7 @@ button {
 
 .partner-title {
   font-size: 25px;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .partner {
