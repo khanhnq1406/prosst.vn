@@ -875,3 +875,66 @@ input:-webkit-autofill:focus {
   background-color: #f3f4f0;
   color: #000000;
 }
+
+/*******************************************
+*                Responsive                *
+*******************************************/
+@media only screen and (max-width: 600px) {
+  .box-wrapper-landing .overview-content {
+    line-height: 6.2vw !important;
+    font-size: 4.5vw !important;
+  }
+  .box-wrapper-landing .overview-title {
+    font-size: 2.5vw !important;
+  }
+  .navigate-wrapper {
+    font-size: 2vw;
+  }
+  .box-wrapper-landing .overview-button button {
+    font-size: 2vw;
+  }
+  .overview-title {
+    font-size: 3.5vw !important;
+  }
+  .overview-content {
+    font-size: 2.5vw !important;
+    margin-bottom: 1.5vw !important;
+  }
+  .box-wrapper .overview-button button {
+    font-size: 2vw;
+  }
+  .box-wrapper {
+    padding: 4vw !important;
+  }
+  .outstanding-title {
+    font-size: 7vw;
+  }
+  .outstanding-content {
+    font-size: 3vw;
+  }
+  .footer-custom {
+    height: fit-content;
+    overflow: scroll;
+  }
+  .footer-wrapper {
+    display: flex;
+  }
+  .grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .grid-item-1 .lang,
+  .grid-item-1 .logo {
+    margin: 5px 0px;
+  }
+  .grid-container-2 {
+    margin: 0px 5px;
+  }
+  .contact-title {
+    margin: 5px;
+  }
+  .grid-item-3 {
+    margin: 0;
+  }
+}
