@@ -49,7 +49,11 @@ const Branding = () => {
                 />
               </div>
               <div class="slide-branding">
-                <img src={`${path}cooperation/partner/keyence.png`} alt="" />
+                <img
+                  style={{ width: "80%" }}
+                  src={`${path}cooperation/partner/keyence.png`}
+                  alt=""
+                />
               </div>
               <div class="slide-branding">
                 <img src={`${path}cooperation/partner/leadshine.png`} alt="" />
@@ -74,7 +78,11 @@ const Branding = () => {
                 <img src={`${path}cooperation/partner/idea.png`} alt="" />
               </div>
               <div class="slide-branding">
-                <img src={`${path}cooperation/partner/pepperl.png`} alt="" />
+                <img
+                  style={{ width: "80%" }}
+                  src={`${path}cooperation/partner/pepperl.png`}
+                  alt=""
+                />
               </div>
               <div class="slide-branding">
                 <img

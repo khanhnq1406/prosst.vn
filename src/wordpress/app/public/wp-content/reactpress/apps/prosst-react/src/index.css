@@ -491,6 +491,13 @@ footer {
   font-weight: 500;
 }
 
+.branding-title p {
+  margin: 25px 0px;
+  color: #000;
+  font-size: 30px;
+  font-weight: 600;
+}
+
 .partner-title {
   font-size: 25px;
   font-weight: 600;
@@ -505,7 +512,7 @@ footer {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(-150px * 8 - 30px * 8));
+    transform: translateX(calc((-150px - 30px) * 8));
   }
 }
 
@@ -564,7 +571,7 @@ footer {
 
 @keyframes scroll-customer {
   0% {
-    transform: translateX(calc(-150px * 9 - 30px * 9));
+    transform: translateX(calc((-150px - 30px) * 9));
   }
   100% {
     transform: translateX(0);
