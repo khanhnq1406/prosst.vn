@@ -160,7 +160,7 @@ footer {
 }
 
 .logo img {
-  width: 70px;
+  width: 6vw;
 }
 
 .navigate-wrapper,
@@ -934,10 +934,22 @@ input:-webkit-autofill:focus {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    overflow: hidden;
   }
   .grid-item-1 .lang,
   .grid-item-1 .logo {
     margin: 5px 0px;
+  }
+  .grid-item-1 .logo {
+    width: 100%;
+    text-align: center;
+  }
+  .grid-item-1 .logo img {
+    width: 15vw;
+  }
+  .grid-item-1 .lang .vn a,
+  .grid-item-1 .lang .en a {
+    justify-content: center;
   }
   .grid-container-2 {
     margin: 0px 5px;
@@ -947,5 +959,61 @@ input:-webkit-autofill:focus {
   }
   .grid-item-3 {
     margin: 0;
+  }
+  .grid-item-4 {
+    margin: 5px 0px;
+  }
+  .grid-container-4 {
+    display: inline;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+  .grid-item-4-1,
+  .grid-item-4-4,
+  .grid-item-4-3 {
+    margin: 10px 0px;
+  }
+  .grid-item-5 {
+    display: inline;
+    text-align: center;
+  }
+  .grid-item-5 .copyright {
+    width: 100%;
+  }
+
+  .grid-item-5 .powered {
+    width: 100%;
+    padding-bottom: 10px;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .contact-title {
+    font-size: 1.4vw;
+  }
+  .contact-label {
+    font-size: 1vw;
+  }
+  .lang {
+    font-size: 1vw;
+  }
+  .info-title {
+    font-size: 1.5vw;
+  }
+  .info-content {
+    font-size: 0.85vw;
+  }
+  .grid-4-header {
+    font-size: 1.1vw;
+  }
+  .grid-4-list {
+    font-size: 1.2vw;
+  }
+  .grid-4-list a {
+    font-size: 1vw;
+  }
+  .copyright,
+  .powered {
+    font-size: 1.1vw;
   }
 }
