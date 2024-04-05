@@ -379,6 +379,9 @@ footer {
 .img-wrapper {
   height: fit-content;
   margin: 0px 10px;
+  max-width: 260px;
+  min-width: 260px;
+  width: 260px;
 }
 .img-wrapper .item {
   height: 100%;
@@ -400,8 +403,9 @@ footer {
   display: flex;
   position: relative;
   left: 0;
-  transition: 0.3s left ease-in-out;
+  transition: 0.3s transform ease-in-out;
   z-index: 1;
+  /* max-width: 400px; */
 }
 
 .slider .item {

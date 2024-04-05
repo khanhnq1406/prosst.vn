@@ -3,18 +3,41 @@ let path = "/wp-content/reactpress/apps/prosst-react/dist/";
 if (process.env.NODE_ENV === "development") path = "/";
 
 const Product = () => {
-  const numberOfProduct = 5; // Number of products to show on the page
-  const numberOfProject = 5; // Number of projects to show on the page
+  const numberOfProduct = 10; // Number of products to show on the page
+  const numberOfProject = 10; // Number of projects to show on the page
   const [isAutoSlidingProduct, setAutoSlidingProduct] = useState(true);
   const [isAutoSlidingProject, setAutoSlidingProject] = useState(true);
   const [currentSlideProduct, setCurrentSlideProduct] = useState(0);
   const [currentSlideProject, setCurrentSlideProject] = useState(0);
 
+  const calculateTranslateXValue = function (numberOfItems) {
+    const marginSliderSize = 200;
+    const maxWidthOfSlide = 280; //260px + 20px margin (.img-wrapper)
+    const sliderVisbleWidth = window.innerWidth - marginSliderSize;
+    const sliderItemsLength = maxWidthOfSlide * numberOfItems;
+    const visibleSlidePercent = (sliderVisbleWidth * 100) / sliderItemsLength;
+    const invisbleSlidePercent = 100 - visibleSlidePercent;
+
+    let numberOfShiftSlides = Math.round(
+      (invisbleSlidePercent / 100) * numberOfItems
+    );
+    if (numberOfShiftSlides === 0 && invisbleSlidePercent > 0)
+      numberOfShiftSlides = 1;
+    const translateXValueForInvisible =
+      invisbleSlidePercent / numberOfShiftSlides;
+    return [numberOfShiftSlides, translateXValueForInvisible];
+  };
+
+  const [numberOfShiftSlidesProduct, translateXValueForInvisibleProduct] =
+    calculateTranslateXValue(numberOfProduct);
+
+  const [numberOfShiftSlidesProject, translateXValueForInvisibleProject] =
+    calculateTranslateXValue(numberOfProject);
   useEffect(() => {
     if (isAutoSlidingProduct) {
       const interval = setInterval(() => {
         setCurrentSlideProduct((prevSlide) =>
-          prevSlide === numberOfProduct ? 0 : prevSlide + 1
+          prevSlide === numberOfShiftSlidesProduct ? 0 : prevSlide + 1
         );
       }, 3000);
 
@@ -26,7 +49,7 @@ const Product = () => {
     if (isAutoSlidingProject) {
       const interval = setInterval(() => {
         setCurrentSlideProject((prevSlide) =>
-          prevSlide === numberOfProject ? 0 : prevSlide + 1
+          prevSlide === numberOfShiftSlidesProject ? 0 : prevSlide + 1
         );
       }, 3000);
 
@@ -56,7 +79,9 @@ const Product = () => {
     setAutoSlidingProduct(false);
     if (direction === "next")
       setCurrentSlideProduct((prevSlide) =>
-        prevSlide === numberOfProduct ? numberOfProduct : prevSlide + 1
+        prevSlide === numberOfShiftSlidesProduct
+          ? numberOfShiftSlidesProduct
+          : prevSlide + 1
       );
     else if (direction === "prev")
       setCurrentSlideProduct((prevSlide) =>
@@ -68,7 +93,9 @@ const Product = () => {
     setAutoSlidingProject(false);
     if (direction === "next")
       setCurrentSlideProject((prevSlide) =>
-        prevSlide === numberOfProject ? numberOfProject : prevSlide + 1
+        prevSlide === numberOfShiftSlidesProject
+          ? numberOfShiftSlidesProject
+          : prevSlide + 1
       );
     else if (direction === "prev")
       setCurrentSlideProject((prevSlide) =>
@@ -85,11 +112,16 @@ const Product = () => {
           <div
             class="slide"
             id="slide"
-            style={{ left: `${currentSlideProduct * -257}px` }}
+            style={{
+              transform: `translateX(-${
+                translateXValueForInvisibleProduct * currentSlideProduct
+              }%)
+              `,
+            }}
           >
             <div className="img-wrapper">
               <a href="#">
-                <img class="item" src={`${path}example-product.png`} />
+                <img class="item" src={`${path}product-example.png`} />
                 <div className="info">
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
                 </div>
@@ -144,7 +176,7 @@ const Product = () => {
               </div>
             </div>
             <div className="img-wrapper">
-              <img class="item" src={`${path}example-product.png`} />
+              <img class="item" src={`${path}product-example.png`} />
               <div className="info">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
               </div>
@@ -170,7 +202,12 @@ const Product = () => {
           <div
             class="slide"
             id="slide"
-            style={{ left: `${currentSlideProject * -257}px` }}
+            style={{
+              transform: `translateX(-${
+                translateXValueForInvisibleProject * currentSlideProject
+              }%)
+            `,
+            }}
           >
             <div className="img-wrapper">
               <iframe
