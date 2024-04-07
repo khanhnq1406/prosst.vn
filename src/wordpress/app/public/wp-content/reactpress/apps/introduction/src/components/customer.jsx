@@ -1,4 +1,4 @@
-let path = "/wp-content/reactpress/apps/introduction/public/customer/";
+let path = "/wp-content/reactpress/apps/introduction/dist/customer/";
 if (process.env.NODE_ENV === "development") path = "/customer/";
 const Customer = () => {
   return (

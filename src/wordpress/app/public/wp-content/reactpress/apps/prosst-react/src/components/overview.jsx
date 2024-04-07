@@ -6,25 +6,25 @@ if (process.env.NODE_ENV === "development") path = "/";
 const Overview = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAutoSliding, setAutoSliding] = useState(true);
-  // useEffect(() => {
-  //   if (isAutoSliding) {
-  //     const interval = setInterval(() => {
-  //       setCurrentSlide((prevSlide) => (prevSlide === 3 ? 0 : prevSlide + 1));
-  //     }, 3000);
+  useEffect(() => {
+    if (isAutoSliding) {
+      const interval = setInterval(() => {
+        setCurrentSlide((prevSlide) => (prevSlide === 3 ? 0 : prevSlide + 1));
+      }, 3000);
 
-  //     return () => clearInterval(interval);
-  //   }
-  // }, [isAutoSliding]); // Run only once on component mount
+      return () => clearInterval(interval);
+    }
+  }, [isAutoSliding]); // Run only once on component mount
 
-  // useEffect(() => {
-  //   if (!isAutoSliding) {
-  //     const interval = setInterval(() => {
-  //       setAutoSliding(true);
-  //     }, 3000);
+  useEffect(() => {
+    if (!isAutoSliding) {
+      const interval = setInterval(() => {
+        setAutoSliding(true);
+      }, 3000);
 
-  //     return () => clearInterval(interval);
-  //   }
-  // }, [isAutoSliding]); // Run only once on component mount
+      return () => clearInterval(interval);
+    }
+  }, [isAutoSliding]); // Run only once on component mount
 
   const handleSlideLeft = () => {
     setCurrentSlide((prevSlide) => (prevSlide === 0 ? 0 : prevSlide - 1));
