@@ -805,6 +805,38 @@ input:-webkit-autofill:focus {
   width: fit-content;
 }
 
+@media only screen and (min-width: 600px) {
+  .contact-title {
+    font-size: 1.4vw;
+  }
+  .contact-label {
+    font-size: 1vw;
+  }
+  .lang {
+    font-size: 1vw;
+  }
+  .info-title {
+    font-size: 1.5vw;
+  }
+  .info-content {
+    font-size: 0.85vw;
+  }
+  .grid-4-header {
+    font-size: 1.1vw;
+  }
+  .grid-4-list {
+    font-size: 1.2vw;
+  }
+  .grid-4-list a {
+    font-size: 1vw;
+    margin: 0;
+  }
+  .copyright,
+  .powered {
+    font-size: 1.1vw;
+  }
+}
+
 /*******************************************
 *                Outstanding               *
 *******************************************/
@@ -906,6 +938,7 @@ input:-webkit-autofill:focus {
   }
   .overview-title {
     font-size: 3.5vw !important;
+    margin-top: 2vw !important;
   }
   .overview-content {
     font-size: 2.5vw !important;
@@ -913,9 +946,11 @@ input:-webkit-autofill:focus {
   }
   .box-wrapper .overview-button button {
     font-size: 2vw;
+    padding-bottom: 2vw !important;
   }
   .box-wrapper {
-    padding: 4vw !important;
+    padding: 0vw 4vw !important;
+    width: 70%;
   }
   .outstanding-title {
     font-size: 7vw;
@@ -985,35 +1020,39 @@ input:-webkit-autofill:focus {
     width: 100%;
     padding-bottom: 10px;
   }
-}
 
-@media only screen and (min-width: 600px) {
-  .contact-title {
-    font-size: 1.4vw;
+  .slider {
+    margin: 0px 13vw;
   }
-  .contact-label {
-    font-size: 1vw;
+  .ctrl-btn.pro-next,
+  .ctrl-btn-second.pro-next-second {
+    margin-right: 0 !important;
+    padding: 2vw;
   }
-  .lang {
-    font-size: 1vw;
+  .ctrl-btn.pro-prev,
+  .ctrl-btn-second.pro-prev-second {
+    margin-left: 0 !important;
+    padding: 2vw;
   }
-  .info-title {
-    font-size: 1.5vw;
+
+  .product-title {
+    margin-left: 13vw;
   }
-  .info-content {
-    font-size: 0.85vw;
+  .grid-container-2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
   }
-  .grid-4-header {
-    font-size: 1.1vw;
+  .grid-item-2 .contact-title {
+    text-align: center;
   }
-  .grid-4-list {
-    font-size: 1.2vw;
+  .grid-item-3 {
+    text-align: center;
   }
-  .grid-4-list a {
-    font-size: 1vw;
+  .partner .partner-title {
+    text-align: center;
   }
-  .copyright,
-  .powered {
-    font-size: 1.1vw;
+  .customer .partner-title {
+    text-align: center;
   }
 }
