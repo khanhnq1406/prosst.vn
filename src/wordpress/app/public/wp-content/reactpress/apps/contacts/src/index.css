@@ -1,7 +1,7 @@
 html,
 body {
   height: 100%;
-  background-color: #f3f4f0;
+  background-color: #f3f4f0 !important;
 }
 .container {
   display: block;
@@ -32,7 +32,17 @@ button {
 #footer {
   display: none !important;
 }
-
+header {
+  display: none !important;
+}
+footer {
+  display: none !important;
+}
+.ast-container {
+  padding: 0;
+  margin: 0;
+  max-width: none;
+}
 /*******************************************
 *                   Navbar                 *
 *******************************************/
@@ -194,8 +204,59 @@ button {
   border-radius: 20px;
   background-color: #111111;
   color: #ffffff;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 .contact-form .submit-btn:hover {
   background-color: #666666;
+}
+
+/*******************************************
+*                Responsive                *
+*******************************************/
+@media only screen and (max-width: 600px) {
+  .navigate-wrapper {
+    font-size: 2.5vw;
+    flex-wrap: wrap;
+    justify-content: right;
+  }
+  .navigate-link a {
+    margin: 2vw;
+  }
+  .navbar .logo {
+    display: flex;
+    align-items: center;
+  }
+  .navbar .logo img {
+    width: 12vw;
+  }
+  .title {
+    font-size: 7vw;
+    margin: 2vw 0;
+  }
+  .contact-title {
+    font-size: 5vw;
+    margin-bottom: 2vw;
+    /* margin: 0px 10px; */
+  }
+  .contact-sub {
+    font-size: 3vw;
+    /* margin: 10px 10px; */
+  }
+  .company-name,
+  .company-address,
+  .contact-email,
+  .contact-hotline {
+    /* margin: 10px 10px; */
+    font-size: 3.2vw;
+  }
+  .contact-form {
+    margin: 10px 10px;
+    padding: 0;
+  }
+  .contact-form .submit-btn {
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+  }
 }

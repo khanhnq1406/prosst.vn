@@ -1,4 +1,4 @@
-let path = "/wp-content/reactpress/apps/products/public/";
+let path = "/wp-content/reactpress/apps/products/dist/";
 if (process.env.NODE_ENV === "development") path = "/";
 export default function Root() {
   const handleFormSubmit = (e) => {
