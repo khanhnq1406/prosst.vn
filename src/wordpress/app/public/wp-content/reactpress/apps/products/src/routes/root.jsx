@@ -1,7 +1,7 @@
 import { getCategoryId, postsApi, categoryApi } from "../api";
 import { useEffect, useState } from "react";
 import Footer from "../../../prosst-react/src/components/footer";
-let path = "/wp-content/reactpress/apps/products/public/";
+let path = "/wp-content/reactpress/apps/products/dist/";
 if (process.env.NODE_ENV === "development") path = "/";
 
 export default function Root() {

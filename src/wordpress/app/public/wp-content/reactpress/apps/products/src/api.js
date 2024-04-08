@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-const WPURL = "http://localhost:10004/wp-json/wp/v2";
+const WPURL = "https://prosst.vn/wp-json/wp/v2";
 export async function postsApi() {
   const url = `${WPURL}/posts/?per_page=100`;
   try {
