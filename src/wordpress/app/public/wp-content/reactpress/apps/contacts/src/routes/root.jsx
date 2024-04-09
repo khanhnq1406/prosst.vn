@@ -1,11 +1,36 @@
 let path = "/wp-content/reactpress/apps/products/dist/";
 if (process.env.NODE_ENV === "development") path = "/";
+import $ from "jquery";
+import { useState } from "react";
 export default function Root() {
+  const [classAttribute, setClass] = useState({
+    show: "",
+    status: "",
+  });
   const handleFormSubmit = (e) => {
     e.preventDefault();
+    let data = [];
     for (let index = 0; index < e.target.length; index++) {
-      console.log(e.target[index].name, ":", e.target[index].value);
+      data.push({ name: e.target[index].name, value: e.target[index].value });
     }
+
+    $.ajax({
+      type: "POST",
+      url: "https://prosst.vn/sendEmail.php",
+      data: data,
+      success(data) {
+        if (data.includes("success")) {
+          console.log("Sended Email");
+          setClass({ show: "show", status: "success" });
+        } else {
+          console.log("Submit failed");
+          setClass({ show: "show", status: "failed" });
+        }
+      },
+    });
+  };
+  const popupButtonHandle = () => {
+    setClass({ show: "", status: "" });
   };
   return (
     <div className="container">
@@ -51,7 +76,11 @@ export default function Root() {
           <div className="contact-email">Email: sale@prosst.vn</div>
           <div className="contact-hotline">Hotline: 0938 489 568</div>
         </div>
-        <form onSubmit={handleFormSubmit} className="contact-form">
+        <form
+          method="post"
+          onSubmit={handleFormSubmit}
+          className="contact-form"
+        >
           {/* Name */}
           <label className="input-label">
             Tên quý khách <div className="required-label">&nbsp;*</div>
@@ -85,6 +114,16 @@ export default function Root() {
             className="submit-btn"
           ></input>
         </form>
+      </div>
+      <div className={`popup ${classAttribute.show}`}>
+        <span
+          className={`popuptext ${classAttribute.show} ${classAttribute.status}`}
+          id="myPopup"
+        >
+          <div className="title"></div>
+          <div className="message"></div>
+          <button onClick={popupButtonHandle}>OK</button>
+        </span>
       </div>
     </div>
   );
