@@ -1,6 +1,6 @@
 import Achievement from "../components/achievement";
 import Customer from "../components/customer";
-import Footer from "../components/footer";
+import Footer from "../../../prosst-react/src/components/footer";
 import Industry from "../components/industry";
 import Overview from "../components/overview";
 import Strategy from "../components/strategy";

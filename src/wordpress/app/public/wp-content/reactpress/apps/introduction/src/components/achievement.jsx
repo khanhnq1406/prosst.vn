@@ -6,7 +6,6 @@ const Achievement = () => {
   useEffect(() => {
     window.addEventListener("scroll", () => {
       var rect = customerRef.current.getBoundingClientRect();
-      console.log(rect.top);
       if (rect.top < 500) {
         customerRef.current.classList.add("is-animated");
         projectRef.current.classList.add("is-animated");

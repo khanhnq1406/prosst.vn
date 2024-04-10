@@ -1,11 +1,33 @@
 let path = "/wp-content/reactpress/apps/prosst-react/dist/";
 if (process.env.NODE_ENV === "development") path = "/";
+import $ from "jquery";
+import { useState } from "react";
 const Footer = () => {
-  const contactSubmit = (event) => {
-    event.preventDefault();
-    for (let index = 0; index < event.target.length; index++) {
-      console.log(`${event.target[index].name}: ${event.target[index].value}`);
+  const [classAttribute, setClass] = useState({
+    show: "",
+    status: "",
+  });
+  const contactSubmit = (e) => {
+    e.preventDefault();
+    let data = [];
+    for (let index = 0; index < e.target.length; index++) {
+      data.push({ name: e.target[index].name, value: e.target[index].value });
     }
+    $.ajax({
+      type: "POST",
+      url: "https://prosst.vn/sendEmail.php",
+      data: data,
+      success(data) {
+        if (data.includes("success")) {
+          setClass({ show: "show", status: "success" });
+        } else {
+          setClass({ show: "show", status: "failed" });
+        }
+      },
+    });
+  };
+  const popupButtonHandle = () => {
+    setClass({ show: "", status: "" });
   };
   return (
     <>
@@ -36,34 +58,54 @@ const Footer = () => {
             <form onSubmit={contactSubmit}>
               <div className="grid-container-2">
                 <div class="grid-item-2-1">
-                  <div className="contact-label">Tên quý khách</div>
-                  <input type="text" name="customer" />
+                  <div className="contact-label">
+                    Tên quý khách <div className="required-label">&nbsp;*</div>
+                  </div>
+                  <input type="text" name="customer-name" required="true" />
                 </div>
                 <div class="grid-item-2-2">
                   <div className="contact-label">Tên công ty</div>
-                  <input type="text" name="company" />
+                  <input type="text" name="company-name" />
                 </div>
                 <div class="grid-item-2-3">
-                  <div className="contact-label">Điện thoại</div>
-                  <input type="text" name="phone" />
+                  <div className="contact-label">
+                    Điện thoại <div className="required-label">&nbsp;*</div>
+                  </div>
+                  <input type="text" name="phone" required="true" />
                 </div>
                 <div class="grid-item-2-4">
                   <div className="contact-label">Email</div>
                   <input type="text" name="email" />
                 </div>
                 <div class="grid-item-2-5">
-                  <div className="contact-label">Tiêu đề</div>
-                  <input type="text" name="Title" />
+                  <div className="contact-label">
+                    Tiêu đề <div className="required-label">&nbsp;*</div>
+                  </div>
+                  <input type="text" name="title" required="true" />
                 </div>
                 <div class="grid-item-2-6">
-                  <div className="contact-label">Mô tả nội dung</div>
-                  <input type="text" name="Content" />
+                  <div className="contact-label">
+                    Mô tả nội dung <div className="required-label">&nbsp;*</div>
+                  </div>
+                  <input type="text" name="content" required="true" />
                 </div>
                 <div class="grid-item-2-7">
                   <input type="submit" value="Gửi thông tin" />
                 </div>
               </div>
             </form>
+            <div className="grid-item-2-8">
+              <div className={`popup ${classAttribute.show}`}>
+                <span
+                  className={`popuptext ${classAttribute.show} ${classAttribute.status}`}
+                  id="myPopup"
+                >
+                  <div className="title"></div>
+                  <div className="message"></div>
+                  <button onClick={popupButtonHandle}>OK</button>
+                </span>
+              </div>
+            </div>
           </div>
           <div class="grid-item-3">
             <div className="info-title">Thông tin liên hệ</div>

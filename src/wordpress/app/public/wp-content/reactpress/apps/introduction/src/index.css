@@ -588,6 +588,8 @@ footer {
 .contact-label {
   font-size: 12px;
   font-weight: 600;
+  display: flex;
+  align-items: center;
 }
 .grid-item-2-1,
 .grid-item-2-2,
@@ -878,18 +880,29 @@ input:-webkit-autofill:focus {
     width: 100%;
   }
   .grid-item-2-7 {
-    padding: 0 20vw;
-    margin-bottom: 7vw;
     width: 100%;
+  }
+  .grid-item-2-7 {
+    text-align: center;
+    padding-right: 0 !important;
+  }
+  .grid-item-2-7 input {
+    width: 50%;
+  }
+  .grid-item-2-8 .popup {
+    justify-content: center;
+    margin-bottom: 20px;
   }
   .contact-title {
     margin: 5px;
   }
   .grid-item-3 {
     margin: 0;
+    width: 100%;
   }
   .grid-item-4 {
     margin: 5px 0px;
+    width: 100%;
   }
   .grid-container-4 {
     display: inline;
@@ -916,4 +929,114 @@ input:-webkit-autofill:focus {
   .contact-label {
     text-align: left;
   }
+}
+.required-label {
+  color: #ff0000;
+  font-size: 1vw;
+  font-weight: 700;
+  width: fit-content;
+  height: fit-content;
+}
+/*******************************************
+*            Notification Pop-up           *
+*******************************************/
+/* Popup container */
+.popup {
+  visibility: hidden;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+.popup.show {
+  visibility: visible;
+  border-color: #000;
+}
+/* The actual popup (appears on top) */
+.popup .popuptext {
+  visibility: hidden;
+  width: 325px;
+  background-color: #ffffff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  z-index: 1;
+}
+
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.popup .popuptext.show.success .title::before {
+  content: "Success";
+  color: #32ba7c;
+  font-size: 35px;
+  margin: 10px 0px;
+}
+.popup .popuptext.show.success .message::before {
+  content: "Thông tin liên lạc của bạn đã được gửi đi thành công";
+  color: #000;
+}
+.popup .popuptext.show.success button {
+  margin: 10px 0px;
+  border: 0;
+  width: 50%;
+  padding: 10px 0px;
+  font-weight: 600;
+  background-color: #32ba7c;
+  color: #ffffff;
+  border-radius: 20px;
+}
+.popup .popuptext.show.success button:hover {
+  background-color: #1d6d49;
+}
+.popup .popuptext.show.failed .title::before {
+  content: "Oops!";
+  color: #e4402b;
+  font-size: 35px;
+  margin: 10px 0px;
+}
+.message {
+  margin: 10px 0px;
+}
+.popup .popuptext.show.failed .message::before {
+  content: "Thông tin liên lạc của bạn chưa thể gửi đi";
+  color: #000;
+}
+.popup .popuptext.show.failed button {
+  margin: 10px 0px;
+  border: 0;
+  width: 50%;
+  padding: 10px 0px;
+  font-weight: 600;
+  background-color: #e4402b;
+  color: #ffffff;
+  border-radius: 20px;
+}
+.popup .popuptext.show.failed button:hover {
+  background-color: #972a1c;
 }
