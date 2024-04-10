@@ -57,13 +57,13 @@ const Overview = () => {
               <a href="/gioi-thieu">Giới thiệu</a>
             </div>
             <div className="navigate-link">
-              <a href="/products">Sản phẩm</a>
+              <a href="/san-pham">Sản phẩm</a>
             </div>
             <div className="navigate-link">
               <a href="/du-an">Dự án</a>
             </div>
             <div className="navigate-link">
-              <a href="#">Liên hệ</a>
+              <a href="lien-he">Liên hệ</a>
             </div>
           </div>
         </div>

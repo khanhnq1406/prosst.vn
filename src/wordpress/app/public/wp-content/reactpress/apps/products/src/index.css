@@ -383,7 +383,37 @@ input:-webkit-autofill:focus {
   opacity: 70%;
   width: fit-content;
 }
-
+@media only screen and (min-width: 600px) {
+  .contact-title {
+    font-size: 1.4vw;
+  }
+  .contact-label {
+    font-size: 1vw;
+  }
+  .lang {
+    font-size: 1vw;
+  }
+  .info-title {
+    font-size: 1.5vw;
+  }
+  .info-content {
+    font-size: 0.85vw;
+  }
+  .grid-4-header {
+    font-size: 1.1vw;
+  }
+  .grid-4-list {
+    font-size: 1.2vw;
+  }
+  .grid-4-list a {
+    font-size: 1vw;
+    margin: 0;
+  }
+  .copyright,
+  .powered {
+    font-size: 1.1vw;
+  }
+}
 @media only screen and (max-width: 600px) {
   .product-wrapper {
     justify-content: center;
