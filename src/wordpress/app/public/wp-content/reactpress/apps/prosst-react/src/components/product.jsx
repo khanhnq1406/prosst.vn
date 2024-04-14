@@ -1,10 +1,32 @@
 import { useState, useEffect } from "react";
+import { getLatestPost } from "../../../products/src/api";
+import { post } from "jquery";
 let path = "/wp-content/reactpress/apps/prosst-react/dist/";
 if (process.env.NODE_ENV === "development") path = "/";
 
 const Product = () => {
+  const [productInfo, setProductInfo] = useState([]);
+  useEffect(() => {
+    (async () => {
+      const posts = await getLatestPost(10);
+      for (const post of posts) {
+        const imgUrl = post._links["wp:attachment"][0].href;
+        const imgResponse = await fetch(imgUrl);
+        let imgPath = await imgResponse.json();
+        imgPath = imgPath[0].source_url;
+        setProductInfo((prevProduct) => {
+          const found = prevProduct.find((element) => element.id === post.id); // Prevent duplicates
+          if (found !== undefined) return [...prevProduct];
+          return [
+            ...prevProduct,
+            { id: post.id, title: post.title.rendered, path: imgPath },
+          ];
+        });
+      }
+    })();
+  }, []);
   const numberOfProduct = 10; // Number of products to show on the page
-  const numberOfProject = 10; // Number of projects to show on the page
+  const numberOfProject = 11; // Number of projects to show on the page
   const [isAutoSlidingProduct, setAutoSlidingProduct] = useState(true);
   const [isAutoSlidingProject, setAutoSlidingProject] = useState(true);
   const [currentSlideProduct, setCurrentSlideProduct] = useState(0);
@@ -102,6 +124,19 @@ const Product = () => {
         prevSlide === 0 ? 0 : prevSlide - 1
       );
   };
+
+  const productItems = productInfo.map((product) => (
+    <li key={product.id}>
+      <div className="img-wrapper">
+        <a href="/lien-he">
+          <img class="item" src={`${product.path}`} />
+          <div className="info">
+            <p>{product.title}</p>
+          </div>
+        </a>
+      </div>
+    </li>
+  ));
   return (
     <>
       <div className="product-wrapper">
@@ -119,68 +154,7 @@ const Product = () => {
               `,
             }}
           >
-            <div className="img-wrapper">
-              <a href="#">
-                <img class="item" src={`${path}product-example.png`} />
-                <div className="info">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-                </div>
-              </a>
-            </div>
-            <div className="img-wrapper">
-              <img class="item" src={`${path}example-product.png`} />
-              <div className="info">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-              </div>
-            </div>
-            <div className="img-wrapper">
-              <img class="item" src={`${path}example-product.png`} />
-              <div className="info">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-              </div>
-            </div>
-            <div className="img-wrapper">
-              <img class="item" src={`${path}example-product.png`} />
-              <div className="info">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-              </div>
-            </div>
-            <div className="img-wrapper">
-              <img class="item" src={`${path}example-product.png`} />
-              <div className="info">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-              </div>
-            </div>
-            <div className="img-wrapper">
-              <img class="item" src={`${path}example-product.png`} />
-              <div className="info">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-              </div>
-            </div>
-            <div className="img-wrapper">
-              <img class="item" src={`${path}example-product.png`} />
-              <div className="info">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-              </div>
-            </div>
-            <div className="img-wrapper">
-              <img class="item" src={`${path}example-product.png`} />
-              <div className="info">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-              </div>
-            </div>
-            <div className="img-wrapper">
-              <img class="item" src={`${path}example-product.png`} />
-              <div className="info">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-              </div>
-            </div>
-            <div className="img-wrapper">
-              <img class="item" src={`${path}product-example.png`} />
-              <div className="info">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-              </div>
-            </div>
+            <ul>{productItems}</ul>
           </div>
         </div>
         <button
@@ -241,51 +215,86 @@ const Product = () => {
               </div>
             </div>
             <div className="img-wrapper">
-              <img class="item" src={`${path}example-product.png`} />
+              <img
+                class="item"
+                src={
+                  "https://prosst.vn/wp-content/reactpress/apps/projects/dist/vinamilk.jpg"
+                }
+              />
               <div className="info">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                <p>Dự án Warehouse tại nhà máy VINAMILK</p>
               </div>
             </div>
             <div className="img-wrapper">
-              <img class="item" src={`${path}example-product.png`} />
+              <img
+                class="item"
+                src={`https://prosst.vn/wp-content/reactpress/apps/projects/dist/linfox.jpg`}
+              />
               <div className="info">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                <p>Dự án Warehouse tại kho Linfox-Unilever</p>
               </div>
             </div>
             <div className="img-wrapper">
-              <img class="item" src={`${path}example-product.png`} />
+              <img
+                class="item"
+                src={`https://prosst.vn/wp-content/reactpress/apps/projects/dist/Nestle-Bongsen.jpg`}
+              />
               <div className="info">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                <p>Dự án Warehouse tại nhà máy Nestle Bông Sen</p>
               </div>
             </div>
             <div className="img-wrapper">
-              <img class="item" src={`${path}example-product.png`} />
+              <img
+                class="item"
+                src={`https://prosst.vn/wp-content/reactpress/apps/projects/dist/Nestle-Longbinh.jpg`}
+              />
               <div className="info">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                <p>Dự án Warehouse tại tổng kho Nestle Long Bình</p>
               </div>
             </div>
             <div className="img-wrapper">
-              <img class="item" src={`${path}example-product.png`} />
+              <img
+                class="item"
+                src={`https://prosst.vn/wp-content/reactpress/apps/projects/dist/fleming.jpg`}
+              />
               <div className="info">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                <p>Dự án Warehouse tại nhà máy Fleming</p>
               </div>
             </div>
             <div className="img-wrapper">
-              <img class="item" src={`${path}example-product.png`} />
+              <img
+                class="item"
+                src={`https://prosst.vn/wp-content/reactpress/apps/projects/dist/Pousung.jpg`}
+              />
               <div className="info">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                <p>Dự án Warehouse tại nhà máy Posung</p>
               </div>
             </div>
             <div className="img-wrapper">
-              <img class="item" src={`${path}example-product.png`} />
+              <img
+                class="item"
+                src={`https://prosst.vn/wp-content/reactpress/apps/projects/dist/idea.jpg`}
+              />
               <div className="info">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                <p>Dự án lắp đặt robot ABB, đối tác IDEA Group</p>
               </div>
             </div>
             <div className="img-wrapper">
-              <img class="item" src={`${path}example-product.png`} />
+              <img
+                class="item"
+                src={`https://prosst.vn/wp-content/reactpress/apps/projects/dist/Saigon-Tantec.jpg`}
+              />
               <div className="info">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                <p>Dự án Warehouse tại nhà máy SaiGon TAN TEC</p>
+              </div>
+            </div>
+            <div className="img-wrapper">
+              <img
+                class="item"
+                src={`https://prosst.vn/wp-content/reactpress/apps/projects/dist/ecco.jpg`}
+              />
+              <div className="info">
+                <p>Dự án Warehouse tại nhà máy ECCO</p>
               </div>
             </div>
           </div>

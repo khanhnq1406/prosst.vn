@@ -86,7 +86,7 @@ const Overview = () => {
                 </p>
               </div>
               <div className="overview-button">
-                <a href="#">
+                <a href="/gioi-thieu">
                   <button>Giới thiệu về PROSST</button>
                 </a>
               </div>
