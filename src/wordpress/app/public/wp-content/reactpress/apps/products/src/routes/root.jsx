@@ -30,7 +30,7 @@ export default function Root() {
         let imgPath = await imgResponse.json();
         imgPath = imgPath[0].source_url;
         setPostsInfo((prevPost) => {
-          const found = prevPost.find((element) => element.id === post.id);
+          const found = prevPost.find((element) => element.id === post.id); // Prevent duplicates
           if (found !== undefined) return [...prevPost];
           return [
             ...prevPost,

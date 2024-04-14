@@ -65,3 +65,24 @@ export async function categoryApi() {
     return [];
   }
 }
+
+export async function getLatestPost(numberOfPosts) {
+  try {
+    const categories = await categoryApi();
+    const posts = await postsApi();
+    const latestPosts = [];
+    for (const post of posts) {
+      for (const category of categories) {
+        if (post.categories[0] == category.id) {
+          latestPosts.push(post);
+        }
+        if (latestPosts.length >= numberOfPosts) break;
+      }
+      if (latestPosts.length >= numberOfPosts) break;
+    }
+    return latestPosts;
+  } catch (error) {
+    console.error(`Error: ${error}`);
+    return [];
+  }
+}
