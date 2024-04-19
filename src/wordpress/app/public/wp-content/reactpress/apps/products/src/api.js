@@ -86,3 +86,18 @@ export async function getLatestPost(numberOfPosts) {
     return [];
   }
 }
+
+export async function getProduct(productId) {
+  const url = `${WPURL}/posts/${productId}`;
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      // oups! something went wrong
+      return;
+    }
+    return response;
+  } catch (error) {
+    console.error(error);
+    return [];
+  }
+}

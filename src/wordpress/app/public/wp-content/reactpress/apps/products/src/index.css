@@ -662,3 +662,99 @@ input:-webkit-autofill:focus {
 .popup .popuptext.show.failed button:hover {
   background-color: #972a1c;
 }
+
+/*******************************************
+*               Product detail             *
+*******************************************/
+
+/* .product-pictures-wrapper {
+  display: flex;
+  justify-content: center;
+} */
+.product-pictures {
+  background-color: #fff;
+  margin: 5px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5vw 5vw;
+  /* width: fit-content; */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.main-picture {
+  text-align: center;
+}
+
+.name-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.name-button button {
+  border: 0;
+  border-radius: 200px;
+  font-weight: 500;
+  padding: 10px 20px;
+  background-color: #111111;
+  color: #ffffff;
+  font-size: 1vw;
+  margin-left: 40px;
+}
+
+.name-button button:hover {
+  background-color: #f2f3f4;
+  color: #000000;
+}
+.product-name {
+  font-size: 2vw;
+  font-weight: 600;
+}
+.main-picture img {
+  width: 45vw;
+  height: 30vw;
+  object-fit: contain;
+}
+
+.more-pictures {
+  max-height: 30vw;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+/* width */
+.more-pictures::-webkit-scrollbar {
+  width: 5px;
+  border-radius: 10px;
+}
+
+/* Track */
+.more-pictures::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+/* Handle */
+.more-pictures::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.more-pictures::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+.more-pictures img {
+  width: 5vw;
+  height: 5vw;
+  object-fit: contain;
+  display: flex;
+}
+
+@media only screen and (max-width: 600px) {
+  .name-button button {
+    padding: 1vw 2vw;
+    margin-left: 2vw;
+    font-size: 1.5vw;
+  }
+}
