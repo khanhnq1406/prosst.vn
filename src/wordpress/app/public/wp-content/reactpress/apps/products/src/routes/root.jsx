@@ -49,8 +49,8 @@ export default function Root() {
       <div className="product-card">
         <img src={post.path} />
         <p>{post.title}</p>
-        <a href="/lien-he">
-          <button>Liên hệ</button>
+        <a href={`/san-pham/#/${post.id}`}>
+          <button>Xem chi tiết</button>
         </a>
       </div>
     </li>

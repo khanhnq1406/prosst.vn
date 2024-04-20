@@ -101,3 +101,19 @@ export async function getProduct(productId) {
     return [];
   }
 }
+
+export async function getProductInCategory(categoryId) {
+  const categoryUrl = `${WPURL}/posts?categories=${categoryId}`;
+  try {
+    const response = await fetch(categoryUrl);
+    if (!response.ok) {
+      // oups! something went wrong
+      return;
+    }
+    const productList = await response.json();
+    return productList;
+  } catch (error) {
+    console.error(error);
+    return [];
+  }
+}

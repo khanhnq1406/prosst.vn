@@ -1,25 +1,28 @@
 import { useLoaderData } from "react-router-dom";
 import { getProduct } from "../api";
 import Picture from "../components/picture";
+import Description from "../components/description";
+import Recommendation from "../components/recommendation";
+import Footer from "../../../prosst-react/src/components/footer";
 export async function loader({ params }) {
   return getProduct(params.productId);
 }
 
 export default function Detail() {
   const product = useLoaderData();
-  const content = product.content.rendered;
-  console.log(content);
-  const startDescription =
-    content.search("&lt;description>") + "&lt;description>".length;
-  const endDescription = content.search("&lt;/description>");
-  const description = content
-    .slice(startDescription, endDescription)
-    .split("<br>");
-  const descriptionItems = description.map((des) => <p>{des}</p>);
   return (
-    <div>
+    <div className="container">
       <div className="picture">
         <Picture product={product} />
+      </div>
+      <div className="description">
+        <Description product={product} />
+      </div>
+      <div className="recommendation">
+        <Recommendation product={product} />
+      </div>
+      <div className="footer-custom">
+        <Footer />
       </div>
     </div>
   );

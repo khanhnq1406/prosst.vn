@@ -667,10 +667,6 @@ input:-webkit-autofill:focus {
 *               Product detail             *
 *******************************************/
 
-/* .product-pictures-wrapper {
-  display: flex;
-  justify-content: center;
-} */
 .product-pictures {
   background-color: #fff;
   margin: 5px;
@@ -749,6 +745,52 @@ input:-webkit-autofill:focus {
   height: 5vw;
   object-fit: contain;
   display: flex;
+}
+
+.product-description {
+  background-color: #fff;
+  margin: 5px;
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5vw 5vw;
+  /* width: fit-content; */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.title-description {
+  width: 100%;
+  font-size: 25px;
+  font-weight: 700;
+}
+.content-description {
+  width: 100%;
+}
+.product-recommendation {
+  background-color: #fff;
+  margin: 5px;
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: left;
+  padding: 2.5vw 5vw;
+  /* width: fit-content; */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.product-recommendation ul {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+}
+
+.recommendation-title {
+  width: 100%;
+  font-weight: 700;
+  font-size: 25px;
 }
 
 @media only screen and (max-width: 600px) {

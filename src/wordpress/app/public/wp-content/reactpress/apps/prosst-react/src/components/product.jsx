@@ -10,10 +10,14 @@ const Product = () => {
     (async () => {
       const posts = await getLatestPost(10);
       for (const post of posts) {
-        const imgUrl = post._links["wp:attachment"][0].href;
-        const imgResponse = await fetch(imgUrl);
-        let imgPath = await imgResponse.json();
-        imgPath = imgPath[0].source_url;
+        // Find main product image
+        const content = post.content.rendered;
+        const startMainImgBlock =
+          content.search("&lt;main image>") + "&lt;main image>".length;
+        const endMainImgBlock = content.search("&lt;/main image>");
+        const mainImgBlock = content.slice(startMainImgBlock, endMainImgBlock);
+        let imgPath = mainImgBlock.match(/src="(.*?)"/)[1];
+
         setProductInfo((prevProduct) => {
           const found = prevProduct.find((element) => element.id === post.id); // Prevent duplicates
           if (found !== undefined) return [...prevProduct];
@@ -128,7 +132,7 @@ const Product = () => {
   const productItems = productInfo.map((product) => (
     <li key={product.id}>
       <div className="img-wrapper">
-        <a href="/lien-he">
+        <a href={`/san-pham/#/${product.id}`}>
           <img class="item" src={`${product.path}`} />
           <div className="info">
             <p>{product.title}</p>

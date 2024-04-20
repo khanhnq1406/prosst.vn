@@ -109,7 +109,7 @@ const Overview = () => {
           </div>
           <div className="content">
             <div className="black-layout">
-              <img src={`${path}overview3.png`}></img>
+              <img src={`${path}overview3-1.png`}></img>
             </div>
             <div className="box-wrapper" style={{ left: "210%" }}>
               <div className="overview-title">ROBOT</div>
@@ -123,7 +123,7 @@ const Overview = () => {
           </div>
           <div className="content">
             <div className="black-layout">
-              <img src={`${path}overview4.png`}></img>
+              <img src={`${path}overview4-1.png`}></img>
             </div>
             <div className="box-wrapper" style={{ left: "310%" }}>
               <div className="overview-title">COMPUTER VISION</div>

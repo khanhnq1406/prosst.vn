@@ -44,7 +44,11 @@ const Picture = (props) => {
   const startFileBlock = content.search("&lt;catalog>") + "&lt;catalog>".length;
   const endFileBlock = content.search("&lt;/catalog>");
   const fileBlock = content.slice(startFileBlock, endFileBlock);
-  const fileLink = fileBlock.match(/href="(.*?)"/)[1];
+
+  let fileLink = undefined;
+  try {
+    fileLink = fileBlock.match(/href="(.*?)"/)[1];
+  } catch (error) {}
   return (
     <div className="container">
       <div className="navbar">
