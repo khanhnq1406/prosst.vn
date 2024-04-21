@@ -49,6 +49,16 @@ const Picture = (props) => {
   try {
     fileLink = fileBlock.match(/href="(.*?)"/)[1];
   } catch (error) {}
+
+  function changeImageHandle(e, direction) {
+    e.preventDefault();
+    const index = imgPaths.indexOf(mainImg);
+    if (direction === "next") {
+      setmainImg(imgPaths[(index + 1) % imgPaths.length]);
+    } else if (direction === "prev") {
+      setmainImg(imgPaths[index - 1 > -1 ? index - 1 : imgPaths.length - 1]);
+    }
+  }
   return (
     <div className="container">
       <div className="navbar">
@@ -77,7 +87,19 @@ const Picture = (props) => {
       <div className="product-pictures-wrapper">
         <div className="product-pictures">
           <div className="main-picture">
-            <img src={mainImg}></img>
+            <div className="image-wrapper">
+              <div className="prev-picture">
+                <button onClick={(e) => changeImageHandle(e, "prev")}>
+                  <img src={`${path}arrow-up.png`} />
+                </button>
+              </div>
+              <img src={mainImg}></img>
+              <div className="next-picture">
+                <button onClick={(e) => changeImageHandle(e, "next")}>
+                  <img src={`${path}arrow-up.png`} />
+                </button>
+              </div>
+            </div>
             <div className="name-button">
               <div className="product-name">{props.product.title.rendered}</div>
               <a href="/lien-he">

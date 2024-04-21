@@ -682,10 +682,41 @@ input:-webkit-autofill:focus {
 .main-picture {
   text-align: center;
 }
+.main-picture .image-wrapper {
+  display: flex;
+}
+.main-picture .next-picture,
+.main-picture .prev-picture {
+  display: flex;
+  align-items: center;
+}
+.main-picture .next-picture button,
+.main-picture .prev-picture button {
+  background-color: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
 
+.main-picture .next-picture button img {
+  width: 4vw;
+  height: 4vw;
+}
+.main-picture .prev-picture button img {
+  width: 4vw;
+  height: 4vw;
+  rotate: 180deg;
+}
 .name-button {
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+.name-button a {
+  display: flex;
   align-items: center;
 }
 .name-button button {
@@ -768,6 +799,9 @@ input:-webkit-autofill:focus {
 .content-description {
   width: 100%;
 }
+.content-description p {
+  margin: 0px 0px 10px 0px;
+}
 .product-recommendation {
   background-color: #fff;
   margin: 5px;
@@ -785,6 +819,7 @@ input:-webkit-autofill:focus {
   display: flex;
   flex-wrap: wrap;
   padding: 0;
+  margin-left: 0;
 }
 
 .recommendation-title {
@@ -798,5 +833,31 @@ input:-webkit-autofill:focus {
     padding: 1vw 2vw;
     margin-left: 2vw;
     font-size: 1.5vw;
+  }
+  .main-picture img {
+    width: 58.5vw;
+    height: 42vw;
+    object-fit: contain;
+  }
+  .product-name {
+    font-size: 3vw;
+  }
+  .product-recommendation {
+    justify-content: center;
+  }
+  .product-recommendation .product-card {
+    margin-bottom: 25px;
+  }
+  .product-recommendation ul {
+    justify-content: center;
+  }
+  .product-recommendation li {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .recommendation-title {
+    text-align: center;
+    margin-bottom: 15px;
   }
 }
