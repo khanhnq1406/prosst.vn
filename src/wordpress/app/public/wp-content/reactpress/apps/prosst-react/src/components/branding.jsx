@@ -19,7 +19,9 @@ const Branding = () => {
           <p>Các thương hiệu chúng tôi từng hợp tác</p>
         </div>
         <div className="partner">
-          <div className="partner-title">PARTNER</div>
+          <div className="partner-title">
+            <p>PARTNER</p>
+          </div>
           <div class="slider-branding">
             <div class="slide-track">
               <div class="slide-branding">
@@ -98,7 +100,9 @@ const Branding = () => {
           </div>
         </div>
         <div className="customer">
-          <div className="partner-title">CUSTOMER</div>
+          <div className="partner-title">
+            <p>CUSTOMER</p>
+          </div>
           <div class="slider-branding-customer">
             <div class="slide-track-customer">
               <div class="slide-branding-customer">

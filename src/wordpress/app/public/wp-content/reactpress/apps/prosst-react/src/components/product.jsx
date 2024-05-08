@@ -33,6 +33,8 @@ const Product = () => {
   const numberOfProject = 11; // Number of projects to show on the page
   const [isAutoSlidingProduct, setAutoSlidingProduct] = useState(true);
   const [isAutoSlidingProject, setAutoSlidingProject] = useState(true);
+  const [isOnMouseEnterProduct, setOnMouseEnterProduct] = useState(false);
+  const [isOnMouseEnterProject, setOnMouseEnterProject] = useState(false);
   const [currentSlideProduct, setCurrentSlideProduct] = useState(0);
   const [currentSlideProject, setCurrentSlideProject] = useState(0);
 
@@ -84,7 +86,7 @@ const Product = () => {
   }, [isAutoSlidingProject]); // Run only once on component mount
 
   useEffect(() => {
-    if (!isAutoSlidingProduct) {
+    if (!isAutoSlidingProduct && !isOnMouseEnterProduct) {
       const interval = setInterval(() => {
         setAutoSlidingProduct(true);
       }, 3000);
@@ -93,7 +95,7 @@ const Product = () => {
   }, [isAutoSlidingProduct]); // Run only once on component mount
 
   useEffect(() => {
-    if (!isAutoSlidingProject) {
+    if (!isAutoSlidingProject && !isOnMouseEnterProject) {
       const interval = setInterval(() => {
         setAutoSlidingProject(true);
       }, 3000);
@@ -147,7 +149,18 @@ const Product = () => {
         <div className="product-title">
           <p className="product-content">SẢN PHẨM</p>
         </div>
-        <div class="slider" id="slider">
+        <div
+          class="slider"
+          id="slider"
+          onMouseEnter={(e) => {
+            setAutoSlidingProduct(false);
+            setOnMouseEnterProduct(true);
+          }}
+          onMouseLeave={(e) => {
+            setAutoSlidingProduct(true);
+            setOnMouseEnterProduct(false);
+          }}
+        >
           <div
             class="slide"
             id="slide"
@@ -176,7 +189,18 @@ const Product = () => {
         <div className="product-title">
           <p className="product-content">DỰ ÁN</p>
         </div>
-        <div class="slider" id="slider">
+        <div
+          class="slider"
+          id="slider"
+          onMouseEnter={(e) => {
+            setAutoSlidingProject(false);
+            setOnMouseEnterProject(true);
+          }}
+          onMouseLeave={(e) => {
+            setAutoSlidingProject(true);
+            setOnMouseEnterProject(false);
+          }}
+        >
           <div
             class="slide"
             id="slide"
@@ -195,7 +219,7 @@ const Product = () => {
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;"
                 referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen
+                allowFullScreen="allowFullScreen"
               ></iframe>
               <div className="info">
                 <p>PROSST Shuttle in racking</p>
@@ -209,7 +233,7 @@ const Product = () => {
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;"
                 referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen
+                allowFullScreen="allowFullScreen"
               ></iframe>
               <div className="info">
                 <p>

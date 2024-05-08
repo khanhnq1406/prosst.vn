@@ -376,7 +376,7 @@ footer {
   color: #ffffff;
 }
 .product-content {
-  font-size: 20px;
+  font-size: 20px !important;
   font-weight: 600;
 }
 .product-wrapper {
@@ -400,7 +400,7 @@ footer {
 }
 .img-wrapper {
   height: fit-content;
-  margin: 0px 10px;
+  margin: 0px 5px;
   max-width: 260px;
   min-width: 260px;
   width: 260px;
@@ -526,9 +526,11 @@ footer {
   font-weight: 600;
 }
 
-.partner-title {
-  font-size: 25px;
+.partner-title p {
+  font-size: 20px !important;
   font-weight: 600;
+  color: #000;
+  margin-bottom: 1em;
 }
 
 .partner {
