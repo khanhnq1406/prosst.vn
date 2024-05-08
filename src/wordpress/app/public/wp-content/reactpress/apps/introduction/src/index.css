@@ -389,7 +389,7 @@ footer {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 200px 0px;
+  padding: 150px 0px 100px 0px;
 }
 .achievement-title {
   max-width: 456px;
@@ -653,7 +653,7 @@ input:-webkit-autofill:focus {
   margin-left: 40px;
 }
 .info-title {
-  font-weight: 500;
+  font-weight: 600;
 }
 .info-content {
   font-size: 12px;
@@ -712,10 +712,10 @@ input:-webkit-autofill:focus {
     font-size: 1.5vw;
   }
   .info-content {
-    font-size: 0.85vw;
+    font-size: 1vw;
   }
   .grid-4-header {
-    font-size: 1.1vw;
+    font-size: 1.5vw;
   }
   .grid-4-list {
     font-size: 1.2vw;
@@ -726,7 +726,7 @@ input:-webkit-autofill:focus {
   }
   .copyright,
   .powered {
-    font-size: 1.1vw;
+    font-size: 1vw;
   }
 }
 
