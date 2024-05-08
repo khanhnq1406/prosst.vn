@@ -45,10 +45,13 @@ const Overview = () => {
       {/* <div className="home">
         <section className="overview"> */}
       <div className="container">
+        <hr className="break-line top" />
         <div className="navbar">
-          <div className="logo">
-            <img src={`${path}logo.png`} />
-          </div>
+          <a href="/">
+            <div className="logo">
+              <img src={`${path}logo.png`} />
+            </div>
+          </a>
           <div className="navigate-wrapper">
             <div className="navigate-link active">
               <a href="/">Trang chủ</a>
@@ -67,6 +70,8 @@ const Overview = () => {
             </div>
           </div>
         </div>
+        <hr className="break-line bottom" />
+
         <div
           className="content-wrapper"
           style={{ transform: `translateX(-${currentSlide * 100}%)` }}

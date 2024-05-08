@@ -78,6 +78,10 @@ footer {
   align-items: center;
 }
 
+.navbar a {
+  z-index: 0;
+}
+
 .navbar .logo {
   width: fit-content;
   height: fit-content;

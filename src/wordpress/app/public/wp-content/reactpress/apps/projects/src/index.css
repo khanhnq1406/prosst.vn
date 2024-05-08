@@ -49,7 +49,7 @@ footer {
 *                   Navbar                 *
 *******************************************/
 .page-header {
-  min-height: 534px;
+  min-height: 480px;
   min-width: 555px;
   background-position: top center;
   background-repeat: no-repeat;
@@ -131,7 +131,7 @@ footer {
 
 .page-title {
   /* position: absolute; */
-  transform: translateY(-40px);
+  transform: translateY(-30px);
 
   background-color: transparent;
   width: 100%;

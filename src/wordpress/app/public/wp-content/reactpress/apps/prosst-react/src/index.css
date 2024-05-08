@@ -42,6 +42,22 @@ footer {
 /*******************************************
 *                Overview                 *
 *******************************************/
+.break-line {
+  height: 1px;
+  width: 100%;
+  border-width: 0;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.7);
+  margin-left: 0;
+  position: absolute;
+  z-index: 5;
+}
+.break-line.bottom {
+  top: 4vw;
+}
+.break-line.top {
+  top: 0.5vw;
+}
 .container {
   position: relative;
   overflow: hidden;
@@ -53,7 +69,7 @@ footer {
 .content-wrapper {
   display: flex;
   transition: transform 0.9s ease;
-  max-height: 430px;
+  max-height: 480px;
 }
 
 .content {
@@ -144,7 +160,7 @@ footer {
 }
 .navbar {
   position: absolute;
-  top: 0;
+  top: 0.7vw;
   height: fit-content;
   width: 100%;
   z-index: 1;
@@ -157,6 +173,8 @@ footer {
   width: fit-content;
   height: fit-content;
   margin-left: 10px;
+  display: flex;
+  justify-content: center;
 }
 
 .logo img {
@@ -181,10 +199,14 @@ footer {
 }
 
 .navigate-wrapper a {
-  color: rgba(255, 255, 255, 0.62);
+  color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
 }
 
+.navigate-link a {
+  font-weight: 500;
+  font-size: 18px;
+}
 .navigate-link.active a {
   color: #ffffff;
   text-decoration: none;
@@ -939,6 +961,14 @@ input:-webkit-autofill:focus {
 *                Responsive                *
 *******************************************/
 @media only screen and (max-width: 600px) {
+  .break-line.bottom {
+    top: 6.5vw;
+  }
+
+  .navbar {
+    margin-top: 0;
+    top: 1.5vw;
+  }
   .navbar .logo {
     margin: 0;
     display: flex;
@@ -954,7 +984,8 @@ input:-webkit-autofill:focus {
   .box-wrapper-landing .overview-title {
     font-size: 2.5vw !important;
   }
-  .navigate-wrapper {
+  .navigate-wrapper,
+  .navigate-link a {
     font-size: 2vw;
   }
   .box-wrapper-landing .overview-button button {
