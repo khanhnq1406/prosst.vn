@@ -40,7 +40,7 @@ const Product = () => {
 
   const calculateTranslateXValue = function (numberOfItems) {
     const marginSliderSize = 200;
-    const maxWidthOfSlide = 280; //260px + 20px margin (.img-wrapper)
+    const maxWidthOfSlide = 270; //260px + 10px margin (.img-wrapper)
     const sliderVisbleWidth = window.innerWidth - marginSliderSize;
     const sliderItemsLength = maxWidthOfSlide * numberOfItems;
     const visibleSlidePercent = (sliderVisbleWidth * 100) / sliderItemsLength;

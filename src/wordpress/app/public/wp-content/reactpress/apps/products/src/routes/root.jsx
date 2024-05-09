@@ -47,6 +47,11 @@ export default function Root() {
   const postItems = postsInfo.map((post) => (
     <li key={post.id}>
       <div className="product-card">
+        <a href={`/san-pham/#/${post.id}`}>
+          <div className="product-detail">
+            <img src={`${path}tap.png`}></img>
+          </div>
+        </a>
         <img src={post.path} />
         <p>{post.title}</p>
         <a href={`/san-pham/#/${post.id}`}>

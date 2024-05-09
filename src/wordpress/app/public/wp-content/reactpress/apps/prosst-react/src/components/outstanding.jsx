@@ -31,6 +31,11 @@ const Outstanding = () => {
     <li key={product.id}>
       <div className="outstanding-card-wrapper">
         <div className="outstanding-card">
+          <a href={`/san-pham/#/${product.id}`}>
+            <div className="product-detail">
+              <img src={`${path}tap.png`}></img>
+            </div>
+          </a>
           <div className="outstanding-card-icon">
             <img src={product.path} />
           </div>

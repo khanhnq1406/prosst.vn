@@ -47,6 +47,11 @@ const Industry = () => {
         <div ref={imgRef} className="grid-image">
           <div className="card-wrapper">
             <div className="card warehouse">
+              <a href="#">
+                <div className="product-detail">
+                  <img src={`${path}tap.png`}></img>
+                </div>
+              </a>
               <div className="card-title">
                 GIẢI PHÁP NHÀ KHO
                 <br />
@@ -62,6 +67,11 @@ const Industry = () => {
               </div>
             </div>
             <div className="card image-processing">
+              <a href="#">
+                <div className="product-detail">
+                  <img src={`${path}tap.png`}></img>
+                </div>
+              </a>
               <div className="card-title">
                 GIẢI PHÁP XỬ LÝ ẢNH
                 <br />
@@ -77,6 +87,11 @@ const Industry = () => {
               </div>
             </div>
             <div className="card maintain">
+              <a href="#">
+                <div className="product-detail">
+                  <img src={`${path}tap.png`}></img>
+                </div>
+              </a>
               <div className="card-title">
                 DỊCH VỤ BẢO TRÌ
                 <br />
@@ -92,6 +107,11 @@ const Industry = () => {
               </div>
             </div>
             <div className="card supply">
+              <a href="#">
+                <div className="product-detail">
+                  <img src={`${path}tap.png`}></img>
+                </div>
+              </a>
               <div className="card-title">
                 CUNG CẤP PHỤ TÙNG -
                 <br />
