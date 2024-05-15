@@ -1,7 +1,7 @@
-const Description = (props) => {
+const Information = (props) => {
   const content = props.product.content.rendered;
-  const startDescription = content.search("description") + "description".length;
-  const endDescription = content.search("/description");
+  const startDescription = content.search("information") + "information".length;
+  const endDescription = content.search("/information");
   const description = content
     .slice(startDescription, endDescription)
     .split("<br>");
@@ -11,11 +11,11 @@ const Description = (props) => {
   return (
     <div className="container">
       <div className="product-description">
-        <div className="title-description">Thông số</div>
+        <div className="title-description">Mô tả sản phẩm</div>
         <div className="content-description">{descriptionItems}</div>
       </div>
     </div>
   );
 };
 
-export default Description;
+export default Information;

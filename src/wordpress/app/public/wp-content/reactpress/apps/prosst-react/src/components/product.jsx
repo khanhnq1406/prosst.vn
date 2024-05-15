@@ -13,8 +13,8 @@ const Product = () => {
         // Find main product image
         const content = post.content.rendered;
         const startMainImgBlock =
-          content.search("&lt;main image>") + "&lt;main image>".length;
-        const endMainImgBlock = content.search("&lt;/main image>");
+          content.search("main image") + "main image".length;
+        const endMainImgBlock = content.search("/main image");
         const mainImgBlock = content.slice(startMainImgBlock, endMainImgBlock);
         let imgPath = mainImgBlock.match(/src="(.*?)"/)[1];
 

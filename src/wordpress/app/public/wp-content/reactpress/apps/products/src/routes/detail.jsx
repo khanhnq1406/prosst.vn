@@ -4,6 +4,8 @@ import Picture from "../components/picture";
 import Description from "../components/description";
 import Recommendation from "../components/recommendation";
 import Footer from "../../../prosst-react/src/components/footer";
+import Resources from "../components/resources";
+import Information from "../components/information";
 export async function loader({ params }) {
   return getProduct(params.productId);
 }
@@ -17,6 +19,12 @@ export default function Detail() {
       </div>
       <div className="description">
         <Description product={product} />
+      </div>
+      <div className="resources">
+        <Resources product={product} />
+      </div>
+      <div className="description">
+        <Information product={product} />
       </div>
       <div className="recommendation">
         <Recommendation product={product} />

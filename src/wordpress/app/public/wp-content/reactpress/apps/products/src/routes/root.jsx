@@ -25,10 +25,12 @@ export default function Root() {
 
       for (let post of posts) {
         if (post.categories[0] !== categoryId) continue;
-        const imgUrl = post._links["wp:attachment"][0].href;
-        const imgResponse = await fetch(imgUrl);
-        let imgPath = await imgResponse.json();
-        imgPath = imgPath[0].source_url;
+        const content = post.content.rendered;
+        const startDescription =
+          content.search("main image") + "main image".length;
+        const endDescription = content.search("/main image");
+        const imageBlock = content.slice(startDescription, endDescription);
+        let imgPath = imageBlock.match(/src="(.*?)"/)[1];
         setPostsInfo((prevPost) => {
           const found = prevPost.find((element) => element.id === post.id); // Prevent duplicates
           if (found !== undefined) return [...prevPost];

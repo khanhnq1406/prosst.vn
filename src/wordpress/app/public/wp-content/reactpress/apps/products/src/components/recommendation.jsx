@@ -11,8 +11,8 @@ const Recommendation = (props) => {
         // if (product.id === props.product.id) continue;
         const content = product.content.rendered;
         const startDescription =
-          content.search("&lt;main image>") + "&lt;main image>".length;
-        const endDescription = content.search("&lt;/main image>");
+          content.search("main image") + "main image".length;
+        const endDescription = content.search("/main image");
         const imageBlock = content.slice(startDescription, endDescription);
         let imgSrc = imageBlock.match(/src="(.*?)"/)[1];
         setProducts((prev) => {
@@ -31,7 +31,7 @@ const Recommendation = (props) => {
       <div className="product-card">
         <img src={product.path} />
         <p>{product.title}</p>
-        <a href={`/san-pham/${product.id}`}>
+        <a href={`/san-pham/#/${product.id}`}>
           <button>Xem chi tiết</button>
         </a>
       </div>

@@ -8,9 +8,8 @@ const Picture = (props) => {
   const product = props.product;
   const content = product.content.rendered;
   // Find main product image
-  const startMainImgBlock =
-    content.search("&lt;main image>") + "&lt;main image>".length;
-  const endMainImgBlock = content.search("&lt;/main image>");
+  const startMainImgBlock = content.search("main image") + "main image".length;
+  const endMainImgBlock = content.search("/main image");
   const mainImgBlock = content.slice(startMainImgBlock, endMainImgBlock);
   let mainImgSrc = mainImgBlock.match(/src="(.*?)"/)[1];
   useEffect(() => {
@@ -20,8 +19,8 @@ const Picture = (props) => {
 
   // Find more product images
   const startMoreImgBlock =
-    content.search("&lt;more images>") + "&lt;more images>".length;
-  const endMoreImgBlock = content.search("&lt;/more images>");
+    content.search("more images") + "more images".length;
+  const endMoreImgBlock = content.search("/more images");
   const moreImgBlock = content.slice(startMoreImgBlock, endMoreImgBlock);
   const moreImgSrc = [...moreImgBlock.matchAll(`src="`)];
   const imgPaths = [mainImgSrc];
@@ -30,6 +29,18 @@ const Picture = (props) => {
     const endImgSrc = moreImgBlock.indexOf(`"`, startImgSrc);
     imgPaths.push(moreImgBlock.slice(startImgSrc, endImgSrc));
   }
+
+  // Quick Description
+  const startQuickDescriptionBlock = content.search("quick") + "quick".length;
+  const endQuickDescriptionBlock = content.search("/quick");
+  const quickDescriptionBlock = content
+    .slice(startQuickDescriptionBlock, endQuickDescriptionBlock)
+    .split("<br>");
+  quickDescriptionBlock.shift();
+  quickDescriptionBlock.pop();
+  const quickDescriptionItems = quickDescriptionBlock.map((des) => (
+    <p>{des}</p>
+  ));
   const handleChangeMainPicture = (e, index) => {
     e.preventDefault();
     setmainImg(imgPaths[index]);
@@ -39,16 +50,6 @@ const Picture = (props) => {
       <img src={imgPath}></img>
     </a>
   ));
-
-  // Find manual file
-  const startFileBlock = content.search("&lt;catalog>") + "&lt;catalog>".length;
-  const endFileBlock = content.search("&lt;/catalog>");
-  const fileBlock = content.slice(startFileBlock, endFileBlock);
-
-  let fileLink = undefined;
-  try {
-    fileLink = fileBlock.match(/href="(.*?)"/)[1];
-  } catch (error) {}
 
   function changeImageHandle(e, direction) {
     e.preventDefault();
@@ -102,19 +103,20 @@ const Picture = (props) => {
                 </button>
               </div>
             </div>
-            <div className="name-button">
-              <div className="product-name">{props.product.title.rendered}</div>
-              <a href="/lien-he">
-                <button>Liên hệ tư vấn</button>
-              </a>
-              {fileLink ? (
-                <a href={fileLink}>
-                  <button>Tải xuống</button>
-                </a>
-              ) : null}
-            </div>
           </div>
           <div className="more-pictures">{productPictures}</div>
+          <div className="name-button">
+            <div className="product-name">{props.product.title.rendered}</div>
+            <div className="quick-description">{quickDescriptionItems}</div>
+            <a href="/lien-he">
+              <button>Liên hệ tư vấn</button>
+            </a>
+            {/* {fileLink ? (
+              <a href={fileLink}>
+                <button>Tải xuống</button>
+              </a>
+            ) : null} */}
+          </div>
         </div>
       </div>
     </div>
