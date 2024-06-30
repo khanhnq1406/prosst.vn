@@ -1,0 +1,368 @@
+html,
+body {
+  height: 100%;
+  background-color: #f3f4f0 !important;
+}
+.container {
+  display: block;
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  background-color: #f3f4f0;
+}
+button {
+  font-family: "Montserrat", sans-serif;
+}
+/*******************************************
+*       Remove WordPress Template          *
+*******************************************/
+.hopeui_style-breadcrumb {
+  display: none !important;
+}
+
+.container-fluid {
+  display: none !important;
+}
+
+.hopeui_style-footer {
+  display: none !important;
+}
+#header {
+  display: none !important;
+}
+#footer {
+  display: none !important;
+}
+header {
+  display: none !important;
+}
+footer {
+  display: none !important;
+}
+.ast-container {
+  padding: 0;
+  margin: 0;
+  max-width: none;
+}
+/*******************************************
+*                   Navbar                 *
+*******************************************/
+
+.navbar {
+  /* position: absolute; */
+  top: 0;
+  height: fit-content;
+  width: 100%;
+  z-index: 1;
+  display: flex;
+  white-space: nowrap;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  align-items: center;
+}
+.navbar .logo {
+  width: fit-content;
+  height: fit-content;
+  margin-left: 20px;
+}
+
+.logo img {
+  width: 6vw;
+}
+
+.navigate-wrapper,
+.navigate-wrapper a {
+  width: fit-content;
+  height: fit-content;
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
+.navigate-wrapper {
+  position: absolute;
+  right: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: right;
+}
+
+.navigate-wrapper a {
+  color: rgba(0, 0, 0, 0.6);
+  text-decoration: none;
+  font-weight: 400;
+}
+
+.navigate-link.active a {
+  color: #000000;
+  text-decoration: none;
+  font-weight: 500;
+}
+.navigate-link:hover {
+  transition: all 0.3s ease;
+  transform: scale(1.2);
+}
+.navigate-link a:hover {
+  color: #000000;
+}
+
+/*******************************************
+*                   Title                  *
+*******************************************/
+
+.title {
+  text-align: center;
+  font-size: 40px;
+  font-weight: 600;
+}
+
+/*******************************************
+*                 Content                  *
+*******************************************/
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+/*******************************************
+*                   Info                   *
+*******************************************/
+.contact-info {
+  max-width: 500px;
+  font-size: 16px;
+}
+.contact-title {
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+.contact-sub {
+  margin-bottom: 15px;
+}
+.company-name {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+.company-address {
+  margin-bottom: 5px;
+}
+.contact-email {
+  margin-bottom: 5px;
+}
+.contact-hotline {
+  margin-bottom: 5px;
+}
+
+/*******************************************
+*                   Form                   *
+*******************************************/
+.contact-form {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 700px;
+  margin-left: 40px;
+  padding-left: 80px;
+  margin-top: 20px;
+}
+
+.contact-form input {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 100%;
+  max-width: 500px;
+  height: 35px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border-style: solid;
+  border-color: #ddd;
+  border-width: 2px;
+}
+
+.input-label {
+  display: flex;
+  width: 100%;
+  font-weight: 700;
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 5px;
+}
+.required-label {
+  color: #ff0000;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.contact-form .submit-btn {
+  width: 200px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  border: none;
+  border-radius: 20px;
+  background-color: #111111;
+  color: #ffffff;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.contact-form .submit-btn:hover {
+  background-color: #666666;
+}
+
+/*******************************************
+*                Responsive                *
+*******************************************/
+@media only screen and (max-width: 600px) {
+  .navigate-wrapper {
+    font-size: 2.5vw;
+    flex-wrap: wrap;
+    justify-content: right;
+  }
+  .navigate-link a {
+    margin: 2vw;
+  }
+  .navbar .logo {
+    display: flex;
+    align-items: center;
+  }
+  .navbar .logo img {
+    width: 12vw;
+  }
+  .title {
+    font-size: 7vw;
+    margin: 2vw 0;
+  }
+  .contact-title {
+    font-size: 5vw;
+    margin-bottom: 2vw;
+    /* margin: 0px 10px; */
+  }
+  .contact-sub {
+    font-size: 3vw;
+    /* margin: 10px 10px; */
+  }
+  .company-name,
+  .company-address,
+  .contact-email,
+  .contact-hotline {
+    /* margin: 10px 10px; */
+    font-size: 3.2vw;
+  }
+  .contact-form {
+    margin: 10px 10px;
+    padding: 0;
+  }
+  .contact-form .submit-btn {
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+  }
+}
+
+/*******************************************
+*            Notification Pop-up           *
+*******************************************/
+/* Popup container */
+.popup {
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* display: inline-block; */
+  /* cursor: pointer; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.popup.show {
+  visibility: visible;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+/* The actual popup (appears on top) */
+.popup .popuptext {
+  visibility: hidden;
+  width: 325px;
+  background-color: #ffffff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  z-index: 1;
+}
+
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.popup .popuptext.show.success .title::before {
+  content: "Success";
+  color: #32ba7c;
+  font-size: 35px;
+  margin: 10px 0px;
+}
+.popup .popuptext.show.success .message::before {
+  content: "Thông tin liên lạc của bạn đã được gửi đi thành công";
+}
+.popup .popuptext.show.success button {
+  margin: 10px 0px;
+  border: 0;
+  width: 50%;
+  padding: 10px 0px;
+  font-weight: 600;
+  background-color: #32ba7c;
+  color: #ffffff;
+  border-radius: 20px;
+}
+.popup .popuptext.show.success button:hover {
+  background-color: #1d6d49;
+}
+.popup .popuptext.show.failed .title::before {
+  content: "Oops!";
+  color: #e4402b;
+  font-size: 35px;
+  margin: 10px 0px;
+}
+.message {
+  margin: 10px 0px;
+}
+.popup .popuptext.show.failed .message::before {
+  content: "Thông tin liên lạc của bạn chưa thể gửi đi";
+}
+.popup .popuptext.show.failed button {
+  margin: 10px 0px;
+  border: 0;
+  width: 50%;
+  padding: 10px 0px;
+  font-weight: 600;
+  background-color: #e4402b;
+  color: #ffffff;
+  border-radius: 20px;
+}
+.popup .popuptext.show.failed button:hover {
+  background-color: #972a1c;
+}

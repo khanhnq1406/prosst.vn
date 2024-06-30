@@ -737,12 +737,12 @@ input:-webkit-autofill:focus {
 }
 
 .main-picture .next-picture button img {
-  width: 4vw;
-  height: 4vw;
+  width: 3vw;
+  height: 3vw;
 }
 .main-picture .prev-picture button img {
-  width: 4vw;
-  height: 4vw;
+  width: 3vw;
+  height: 3vw;
   rotate: 180deg;
 }
 .name-button {
@@ -783,6 +783,7 @@ input:-webkit-autofill:focus {
   min-width: 6vw;
   overflow-y: scroll;
   overflow-x: hidden;
+  padding: 20px;
 }
 /* width */
 .more-pictures::-webkit-scrollbar {

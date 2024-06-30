@@ -79,9 +79,11 @@ export default function Root() {
   return (
     <div className="container">
       <div className="navbar">
-        <div className="logo">
-          <img src={`${path}logo.png`} />
-        </div>
+        <a href="/">
+          <div className="logo">
+            <img src={`${path}logo.png`} />
+          </div>
+        </a>
         <div className="navigate-wrapper">
           <div className="navigate-link">
             <a href="/">Trang chủ</a>
